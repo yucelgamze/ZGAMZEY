@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>zgy function group</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZGY_FG_0001TOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZGY_FG_0001</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZGY_FM_0001</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>MALZEME SORGU SERVİSİ</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_MATNR</PARAMETER>
+       <TYP>ZGY_TT_0009</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_SORGU</PARAMETER>
+       <TYP>ZGY_TT_0010</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_MATNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ZGY_S_0009 matnr table type</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SORGU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ZGY_S_0010 malzeme sorgu table type</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

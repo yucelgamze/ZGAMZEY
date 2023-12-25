@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_ENHO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOOL>BADI_IMPL</TOOL>
+   <SHORTTEXT>Eğitim maksatlı oluşturuldu</SHORTTEXT>
+   <SPOT_NAME>LE_SHP_DELIVERY_PROC</SPOT_NAME>
+   <IMPL>
+    <ENH_BADI_IMPL_DATA>
+     <SPOT_NAME>LE_SHP_DELIVERY_PROC</SPOT_NAME>
+     <BADI_NAME>LE_SHP_DELIVERY_PROC</BADI_NAME>
+     <IMPL_NAME>ZLE_SHP_DELIVERY_PROC_GY</IMPL_NAME>
+     <IMPL_CLASS>ZCL_IM_LE_SHP_DELIVERY_PRC_GY</IMPL_CLASS>
+     <ACTIVE>X</ACTIVE>
+     <IMPL_SHORTTEXT>Uygulama: Erweiterungen in der Lieferungsbearbeitung</IMPL_SHORTTEXT>
+     <IMPL_SHORTTEXT_ID>E827ECF3B45B1EDEA0DA1B6C35FBE100</IMPL_SHORTTEXT_ID>
+    </ENH_BADI_IMPL_DATA>
+   </IMPL>
+   <SOTR>
+    <item>
+     <HEADER>
+      <CONCEPT>E827ECF3B45B1EDEA0DA0DFA36E60100</CONCEPT>
+      <CREA_LAN>T</CREA_LAN>
+      <TRALA_TYPE>1</TRALA_TYPE>
+      <OBJID_VEC>AAI=</OBJID_VEC>
+     </HEADER>
+     <ENTRIES>
+      <SOTR_TEXT>
+       <CONCEPT>E827ECF3B45B1EDEA0DA0DFA36E60100</CONCEPT>
+       <LANGU>T</LANGU>
+       <LFD_NUM>0001</LFD_NUM>
+       <FLAG_CNTXT>X</FLAG_CNTXT>
+       <STATUS>R</STATUS>
+       <LENGTH>041</LENGTH>
+       <TEXT>Eğitim maksatlı oluşturuldu</TEXT>
+      </SOTR_TEXT>
+     </ENTRIES>
+    </item>
+    <item>
+     <HEADER>
+      <CONCEPT>E827ECF3B45B1EDEA0DA1B6C35FBE100</CONCEPT>
+      <CREA_LAN>T</CREA_LAN>
+      <TRALA_TYPE>1</TRALA_TYPE>
+      <OBJID_VEC>AAI=</OBJID_VEC>
+     </HEADER>
+     <ENTRIES>
+      <SOTR_TEXT>
+       <CONCEPT>E827ECF3B45B1EDEA0DA1B6C35FBE100</CONCEPT>
+       <LANGU>T</LANGU>
+       <LFD_NUM>0001</LFD_NUM>
+       <FLAG_CNTXT>X</FLAG_CNTXT>
+       <STATUS>R</STATUS>
+       <LENGTH>078</LENGTH>
+       <TEXT>Uygulama: Erweiterungen in der Lieferungsbearbeitung</TEXT>
+      </SOTR_TEXT>
+     </ENTRIES>
+    </item>
+   </SOTR>
+   <SOTR_USE>
+    <SOTR_USE>
+     <PGMID>R3TR</PGMID>
+     <OBJECT>ENHO</OBJECT>
+     <OBJ_NAME>ZLE_SHP_DELIVERY_PROC_GY</OBJ_NAME>
+     <CONCEPT>E827ECF3B45B1EDEA0DA0DFA36E60100</CONCEPT>
+     <LFD_NUM>0001</LFD_NUM>
+    </SOTR_USE>
+    <SOTR_USE>
+     <PGMID>R3TR</PGMID>
+     <OBJECT>ENHO</OBJECT>
+     <OBJ_NAME>ZLE_SHP_DELIVERY_PROC_GY</OBJ_NAME>
+     <CONCEPT>E827ECF3B45B1EDEA0DA1B6C35FBE100</CONCEPT>
+     <LFD_NUM>0001</LFD_NUM>
+    </SOTR_USE>
+   </SOTR_USE>
+  </asx:values>
+ </asx:abap>
+</abapGit>

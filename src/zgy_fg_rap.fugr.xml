@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Rap excel fg</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZGY_FG_RAPTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZGY_FG_RAP</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZGY_FM_RAP</FUNCNAME>
+     <SHORT_TEXT>rap excel fm</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_STRING</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZGY_DE_ATTACHMENT</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RT_DATA</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZGY_TT_003</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_STRING</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Attachment</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RT_DATA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Mal Giriş Kokpiti Excel Verileri</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

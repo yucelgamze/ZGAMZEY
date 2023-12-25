@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SFPI" serializer_version="v1.0.0">
+ <asx:abap version="1.0" xmlns:asx="http://www.sap.com/abapxml">
+  <asx:values>
+   <VERSION>1</VERSION>
+   <TYPE/>
+   <INTERFACE href="#o1"/>
+   <INTERFACET>
+    <FPINTERFACET>
+     <NAME/>
+     <STATE/>
+     <LANGUAGE>T</LANGUAGE>
+     <ID/>
+     <TEXT>sanko döviz adobe arayüz</TEXT>
+    </FPINTERFACET>
+   </INTERFACET>
+  </asx:values>
+  <asx:heap xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:abap="http://www.sap.com/abapxml/types/built-in" xmlns:cls="http://www.sap.com/abapxml/classes/global" xmlns:dic="http://www.sap.com/abapxml/types/dictionary">
+   <cls:CL_FP_INTERFACE_DATA id="o1">
+    <CL_FP_INTERFACE_DATA classVersion="1">
+     <CODING href="#o5"/>
+     <PARAMETERS href="#o4"/>
+     <GLOBAL_DEFINITIONS href="#o3"/>
+     <REFERENCE_FIELDS href="#o2"/>
+     <XSD_DEFINITIONS/>
+    </CL_FP_INTERFACE_DATA>
+   </cls:CL_FP_INTERFACE_DATA>
+   <cls:CL_FP_REFERENCE_FIELDS id="o2">
+    <CL_FP_INTERFACE_DATA_CHANGED classVersion="1">
+     <INTERFACE_DATA href="#o1"/>
+    </CL_FP_INTERFACE_DATA_CHANGED>
+    <CL_FP_REFERENCE_FIELDS classVersion="1">
+     <REFERENCE_FIELDS/>
+    </CL_FP_REFERENCE_FIELDS>
+   </cls:CL_FP_REFERENCE_FIELDS>
+   <cls:CL_FP_GLOBAL_DEFINITIONS id="o3">
+    <CL_FP_INTERFACE_DATA_CHANGED classVersion="1">
+     <INTERFACE_DATA href="#o1"/>
+    </CL_FP_INTERFACE_DATA_CHANGED>
+    <CL_FP_GLOBAL_DEFINITIONS classVersion="1">
+     <GLOBAL_DATA>
+      <SFPGDATA>
+       <NAME>GV_HEADER</NAME>
+       <TYPING>TYPE</TYPING>
+       <TYPENAME>CHAR200</TYPENAME>
+       <DEFAULTVAL/>
+       <CONSTANT/>
+      </SFPGDATA>
+      <SFPGDATA>
+       <NAME>GS_CURR</NAME>
+       <TYPING>TYPE</TYPING>
+       <TYPENAME>GTY_CURR</TYPENAME>
+       <DEFAULTVAL/>
+       <CONSTANT/>
+      </SFPGDATA>
+      <SFPGDATA>
+       <NAME>GT_CURR</NAME>
+       <TYPING>TYPE</TYPING>
+       <TYPENAME>GTT_CURR</TYPENAME>
+       <DEFAULTVAL/>
+       <CONSTANT/>
+      </SFPGDATA>
+     </GLOBAL_DATA>
+     <TYPES>
+      <FPCLINE>TYPES:BEGIN OF gty_curr,</FPCLINE>
+      <FPCLINE>        kurst	TYPE  kurst_curr,</FPCLINE>
+      <FPCLINE>        fcurr	TYPE  fcurr_curr,</FPCLINE>
+      <FPCLINE>        tcurr	TYPE  tcurr_curr,</FPCLINE>
+      <FPCLINE>        gdatu	TYPE  gdatu_inv,</FPCLINE>
+      <FPCLINE>        ukurs	TYPE  ukurs_curr,</FPCLINE>
+      <FPCLINE>        spras	TYPE  spras,</FPCLINE>
+      <FPCLINE>        waers	TYPE  waers_curc,</FPCLINE>
+      <FPCLINE>        ltext	TYPE  ltext,</FPCLINE>
+      <FPCLINE>      END OF gty_curr.</FPCLINE>
+      <FPCLINE/>
+      <FPCLINE>TYPES:gtt_curr TYPE TABLE OF gty_curr.</FPCLINE>
+      <FPCLINE/>
+     </TYPES>
+     <FIELDSYMBOLS/>
+    </CL_FP_GLOBAL_DEFINITIONS>
+   </cls:CL_FP_GLOBAL_DEFINITIONS>
+   <cls:CL_FP_PARAMETERS id="o4">
+    <CL_FP_INTERFACE_DATA_CHANGED classVersion="1">
+     <INTERFACE_DATA href="#o1"/>
+    </CL_FP_INTERFACE_DATA_CHANGED>
+    <CL_FP_PARAMETERS classVersion="1">
+     <IMPORT_PARAMETERS/>
+     <EXPORT_PARAMETERS/>
+     <TABLE_PARAMETERS/>
+     <EXCEPTIONS/>
+    </CL_FP_PARAMETERS>
+   </cls:CL_FP_PARAMETERS>
+   <cls:CL_FP_CODING id="o5">
+    <CL_FP_INTERFACE_DATA_CHANGED classVersion="1">
+     <INTERFACE_DATA href="#o1"/>
+    </CL_FP_INTERFACE_DATA_CHANGED>
+    <CL_FP_CODING classVersion="1">
+     <INPUT_PARAMETERS/>
+     <OUTPUT_PARAMETERS/>
+     <INITIALIZATION>
+      <FPCLINE/>
+      <FPCLINE>TABLES:zgy_t_curr, tcurr, tcurt.</FPCLINE>
+      <FPCLINE/>
+      <FPCLINE>DATA:lt_curr TYPE TABLE OF zgy_t_curr,</FPCLINE>
+      <FPCLINE>     ls_curr TYPE zgy_t_curr.</FPCLINE>
+      <FPCLINE/>
+      <FPCLINE>DATA:lv_datum TYPE c.</FPCLINE>
+      <FPCLINE/>
+      <FPCLINE>lv_datum = sy-datum+6(2).</FPCLINE>
+      <FPCLINE>CONCATENATE lv_datum sy-datum+4(2) INTO lv_datum SEPARATED BY &apos;.&apos;.</FPCLINE>
+      <FPCLINE>CONCATENATE lv_datum sy-datum(4)    INTO lv_datum SEPARATED BY &apos;.&apos;.</FPCLINE>
+      <FPCLINE/>
+      <FPCLINE>gv_header = &apos;TARİHİ İTİBARI İLE GÜNLÜK DÖVİZ KURLARI&apos;.</FPCLINE>
+      <FPCLINE/>
+      <FPCLINE>gv_header = lv_datum &amp;&amp; gv_header.</FPCLINE>
+      <FPCLINE/>
+      <FPCLINE>SELECT</FPCLINE>
+      <FPCLINE>tcurr~kurst ,</FPCLINE>
+      <FPCLINE>tcurr~fcurr ,</FPCLINE>
+      <FPCLINE>tcurr~tcurr ,</FPCLINE>
+      <FPCLINE>tcurr~gdatu ,</FPCLINE>
+      <FPCLINE>tcurr~ukurs ,</FPCLINE>
+      <FPCLINE>tcurt~spras ,</FPCLINE>
+      <FPCLINE>tcurt~waers ,</FPCLINE>
+      <FPCLINE>tcurt~ltext</FPCLINE>
+      <FPCLINE>FROM tcurr</FPCLINE>
+      <FPCLINE>LEFT JOIN tcurt</FPCLINE>
+      <FPCLINE>ON tcurr~fcurr EQ tcurt~waers</FPCLINE>
+      <FPCLINE>WHERE tcurt~spras EQ &apos;T&apos; AND</FPCLINE>
+      <FPCLINE>      tcurr~gdatu EQ lv_datum</FPCLINE>
+      <FPCLINE>INTO CORRESPONDING FIELDS OF TABLE gt_curr.</FPCLINE>
+      <FPCLINE/>
+      <FPCLINE>LOOP AT gt_curr ASSIGNING FIELD-SYMBOL(&lt;gfs_curr&gt;) GROUP BY ( fcurr = &lt;gfs_curr&gt;-waers ).</FPCLINE>
+      <FPCLINE>  IF &lt;gfs_curr&gt;-gdatu EQ &apos;20181201&apos;.</FPCLINE>
+      <FPCLINE/>
+      <FPCLINE>    CASE &lt;gfs_curr&gt;-fcurr. &quot;KAYNAK</FPCLINE>
+      <FPCLINE/>
+      <FPCLINE>      WHEN &apos;TRY&apos;.</FPCLINE>
+      <FPCLINE>        CASE &lt;gfs_curr&gt;-tcurr. &quot;HEDEF</FPCLINE>
+      <FPCLINE>          WHEN &apos;USD&apos;.</FPCLINE>
+      <FPCLINE>            ls_curr-alis = &lt;gfs_curr&gt;-ukurs.</FPCLINE>
+      <FPCLINE>        ENDCASE.</FPCLINE>
+      <FPCLINE/>
+      <FPCLINE>      WHEN &apos;USD&apos;.</FPCLINE>
+      <FPCLINE>        CASE &lt;gfs_curr&gt;-tcurr.</FPCLINE>
+      <FPCLINE>          WHEN &apos;TRY&apos;.</FPCLINE>
+      <FPCLINE>            ls_curr-satis = &lt;gfs_curr&gt;-ukurs.</FPCLINE>
+      <FPCLINE>        ENDCASE.</FPCLINE>
+      <FPCLINE/>
+      <FPCLINE>    ENDCASE.</FPCLINE>
+      <FPCLINE>  ENDIF.</FPCLINE>
+      <FPCLINE/>
+      <FPCLINE/>
+      <FPCLINE/>
+      <FPCLINE>  LOOP AT GROUP &lt;gfs_curr&gt; ASSIGNING FIELD-SYMBOL(&lt;gfs_curt&gt;).</FPCLINE>
+      <FPCLINE/>
+      <FPCLINE>  ENDLOOP.</FPCLINE>
+      <FPCLINE>ENDLOOP.</FPCLINE>
+     </INITIALIZATION>
+     <FORMS/>
+    </CL_FP_CODING>
+   </cls:CL_FP_CODING>
+  </asx:heap>
+ </asx:abap>
+</abapGit>

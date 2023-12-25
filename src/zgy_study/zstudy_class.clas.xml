@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZSTUDY_CLASS</CLSNAME>
+    <LANGU>T</LANGU>
+    <DESCRIPT>study class</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CLSNAME>ZSTUDY_CLASS</CLSNAME>
+     <CMPNAME>ADD_NUMBERS</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>addition of numbers</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZSTUDY_CLASS</CLSNAME>
+     <CMPNAME>CV_NUM</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Doğal sayı</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZSTUDY_CLASS</CLSNAME>
+     <CMPNAME>DIV_NUMBERS</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>division of numbers</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZSTUDY_CLASS</CLSNAME>
+     <CMPNAME>DIV_NUMBERS2</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>division of two  numbers</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZSTUDY_CLASS</CLSNAME>
+     <CMPNAME>MUL_NUMBERS</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>multiplication of numbers</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZSTUDY_CLASS</CLSNAME>
+     <CMPNAME>NUMBER_TYPE</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Doğal sayı</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CLSNAME>ZSTUDY_CLASS</CLSNAME>
+     <CMPNAME>SUB_NUMBERS</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>substraction of numbers</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

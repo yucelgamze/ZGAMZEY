@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>zgy_study function group</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZGY_FGTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZGY_FG</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZPERS_FM</FUNCNAME>
+     <SHORT_TEXT>personal_id  maas bilgisi kontrolü</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_PERSONAL_ID</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZPERS_ID_DE</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_FOUND</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR1</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_MAAS</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZPERS_MAAS_DE</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_PERSONAL_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>personal id data element</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_FOUND</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tek basamaklı gösterge</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_MAAS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>personal maas data element</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

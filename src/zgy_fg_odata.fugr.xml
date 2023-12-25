@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>OData Function Group</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZGY_FG_ODATATOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZGY_FG_ODATA</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZGY_FM_TOPLAM_MIKTAR</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Which is returning the Total Quantity</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_VBELN</PARAMETER>
+       <TYP>VBELN</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_TOTAL</PARAMETER>
+       <TYP>CHAR10</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_SUCCESS</PARAMETER>
+       <TYP>XFELD</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_MESSAGE</PARAMETER>
+       <TYP>BAPI_MSG</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_VBELN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SD belgesi numarası</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_TOTAL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Karakter alanı uzunluğu 10</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_SUCCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Seçme kutusu</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_MESSAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>İleti metni</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

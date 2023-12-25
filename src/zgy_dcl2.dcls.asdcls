@@ -1,0 +1,11 @@
+@EndUserText.label: 'Access Control for ZGY_DDL48'
+@MappingRole: false
+define role ZGY_DCL2 {
+    grant
+        select
+            on
+                ZGY_DDL48
+                    where
+                        meins = 'ST';
+                        
+}

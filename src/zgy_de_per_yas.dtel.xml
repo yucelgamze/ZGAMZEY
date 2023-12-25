@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZGY_DE_PER_YAS</ROLLNAME>
+    <DDLANGUAGE>T</DDLANGUAGE>
+    <DOMNAME>ZGY_DO_PER_YAS</DOMNAME>
+    <HEADLEN>55</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>20</SCRLEN2>
+    <SCRLEN3>40</SCRLEN3>
+    <DDTEXT>Personel Yaş</DDTEXT>
+    <REPTEXT>Personel Yaş</REPTEXT>
+    <SCRTEXT_S>Pers YAŞ</SCRTEXT_S>
+    <SCRTEXT_M>Personel Yaş</SCRTEXT_M>
+    <SCRTEXT_L>Personel Yaş</SCRTEXT_L>
+    <DTELMASTER>T</DTELMASTER>
+    <SHLPNAME>ZGY_SH_PER_SH</SHLPNAME>
+    <SHLPFIELD>PERSONAL_YAS</SHLPFIELD>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

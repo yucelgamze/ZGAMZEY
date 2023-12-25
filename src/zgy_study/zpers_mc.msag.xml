@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZPERS_MC</ARBGB>
+    <MASTERLANG>T</MASTERLANG>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZPERS_MC</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>TÜM ALANLAR DOLU OLMAK ZORUNDA!!!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZPERS_MC</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>KAYIT İŞLEMİ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİRİLDİ!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZPERS_MC</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>KAYIT SIRASINDA HATA MEYDANA GELDİ!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZPERS_MC</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>İLGİLİ VERİLER GÜNCELLENMİŞTİR!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZPERS_MC</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>HATA! İLGİLİ VERİLER GÜNCELLENEMEMİŞTİR!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZPERS_MC</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Öğrenci ID alanını doldurmadan işlem yapamazsınız!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZPERS_MC</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>VERİLER BAŞARILI BİR ŞEKİLDE SİLİNMİŞTİR!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZPERS_MC</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>SİLME İŞLEMİ SIRASINDA HATA!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZPERS_MC</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Girilen ID kaydı tabloda mevcut!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZPERS_MC</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Girilen ID kaydı bulunamadı!</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>web service function group</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZGY_FG_WEBTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZGY_FG_WEB</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZGY_FM_WEB</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>satış sipariş web servis entegrasyonu</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_ILK_TARIH</PARAMETER>
+       <TYP>ERDAT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_SON_TARIH</PARAMETER>
+       <TYP>ERDAT</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_SATIS_KALEM</PARAMETER>
+       <TYP>ZGY_TT_SATIS_KALEM</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_SUCCESS</PARAMETER>
+       <TYP>XFELD</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_ILK_TARIH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Kaydın yaratıldığı tarih</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_SON_TARIH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Kaydın yaratıldığı tarih</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SATIS_KALEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ZGY_S_SAT table type</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_SUCCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Seçme kutusu</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZGY_FM_WS_CITY</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>web service rfc city</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_CITY_ID</PARAMETER>
+       <TYP>ZGY_DE_CITY_ID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_CITY_NAME</PARAMETER>
+       <TYP>ZGY_DE_CITY_NAME</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_SUCCESS</PARAMETER>
+       <TYP>XFELD</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_MESSAGE</PARAMETER>
+       <TYP>BAPI_MSG</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_CITY_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Şehir ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_CITY_NAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Şehir Ad</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_SUCCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Seçme kutusu</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_MESSAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>İleti metni</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZGY_TEST_PROVIDER</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>somanager için web service function module</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <TYP>MATNR</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ES_DETAIL</PARAMETER>
+       <TYP>MARA</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Malzeme numarası</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_DETAIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Genel malzeme verileri</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

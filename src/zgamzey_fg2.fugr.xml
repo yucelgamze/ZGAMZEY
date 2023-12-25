@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>func group</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZGAMZEY_FG2TOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZGAMZEY_FG2</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZGAMZEY_KONTROL_FM</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>zgamzey_matnr_kontrol_fm</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_MATNR</PARAMETER>
+       <TYP>ZGAMZEY_MATNR_S_TT</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_KONTROL</PARAMETER>
+       <TYP>ZGAMZEY_MATNR_KONTROL_TT</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_MATNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ZGAMZEY_MATNR_S table type</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_KONTROL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ZGAMZEY_MATNR_KONTROL_S table type</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZGY_DEP</FUNCNAME>
+     <SHORT_TEXT>DEPARTMAN ID KONTROL</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_DEPARTMAN_ID</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZPERS_DEPARTMAN_ID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_FOUND</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR1</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_DEPARTMAN_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Personel Departman ID Data Element</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_FOUND</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tek basamaklı gösterge</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZGY_FM_OBJECTSOFUSER</FUNCNAME>
+     <SHORT_TEXT>objects of user</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_CDS_TIME</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_JOIN_TIME</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_NESTED_SELECT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_SELECT_COUNT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_VIEW_TIME</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>INT4</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>EV_CDS_TIME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Doğal sayı</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_JOIN_TIME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Doğal sayı</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_NESTED_SELECT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Doğal sayı</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_SELECT_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Doğal sayı</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_VIEW_TIME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Doğal sayı</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZGY_MINMAX</FUNCNAME>
+     <SHORT_TEXT>ZGY_MINMAX</SHORT_TEXT>
+    </item>
+    <item>
+     <FUNCNAME>ZGY_TITLE</FUNCNAME>
+     <SHORT_TEXT>title ID kontrol</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_TITLE_ID</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZPERS_TITLE_ID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_FOUND</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR1</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_TITLE_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Personel Title ID Data Element</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_FOUND</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tek basamaklı gösterge</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZSIPARIS_MALGIRIS_FATURA_SERVI</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>sipariş mal giriş fatura servisi fonksiyonu</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IT_EBELN</PARAMETER>
+       <TYP>ZEBELN_TT</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_FATURA</PARAMETER>
+       <TYP>ZFATURA_TT</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IT_EBELN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>EBELN TABLE TYPE</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FATURA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>FATURA STURCTURE DB TABLE TYPE</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
