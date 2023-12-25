@@ -1089,46 +1089,6 @@
      <WSSOAPPROP>
       <WSNAME>ZGY_FM_WEB</WSNAME>
       <VERSION>A</VERSION>
-      <FEATURE>http://www.sap.com/webas/630/soap/features/authentication/</FEATURE>
-      <SOAPAPP>FUNC</SOAPAPP>
-      <PROPNUM>0001</PROPNUM>
-      <PROPNAME>AuthenticationLevel</PROPNAME>
-      <VALUE>Basic</VALUE>
-      <PROFILE_URI>PRF_DT_IF_SEC_LOW</PROFILE_URI>
-     </WSSOAPPROP>
-     <WSSOAPPROP>
-      <WSNAME>ZGY_FM_WEB</WSNAME>
-      <VERSION>A</VERSION>
-      <FEATURE>http://www.sap.com/webas/630/soap/features/session/</FEATURE>
-      <SOAPAPP>FUNC</SOAPAPP>
-      <PROPNUM>0001</PROPNUM>
-      <PROPNAME>enableSession</PROPNAME>
-      <VALUE>false</VALUE>
-      <PROFILE_URI>PRF_DT_IF_COM_STATELESS</PROFILE_URI>
-     </WSSOAPPROP>
-     <WSSOAPPROP>
-      <WSNAME>ZGY_FM_WEB</WSNAME>
-      <VERSION>A</VERSION>
-      <FEATURE>http://www.sap.com/webas/630/soap/features/transportguarantee/</FEATURE>
-      <SOAPAPP>FUNC</SOAPAPP>
-      <PROPNUM>0001</PROPNUM>
-      <PROPNAME>Level</PROPNAME>
-      <VALUE>None</VALUE>
-      <PROFILE_URI>PRF_DT_IF_SEC_LOW</PROFILE_URI>
-     </WSSOAPPROP>
-     <WSSOAPPROP>
-      <WSNAME>ZGY_FM_WEB</WSNAME>
-      <VERSION>A</VERSION>
-      <FEATURE>http://www.sap.com/webas/640/soap/features/messageId/</FEATURE>
-      <SOAPAPP>FUNC</SOAPAPP>
-      <PROPNUM>0001</PROPNUM>
-      <PROPNAME>enableMessageId</PROPNAME>
-      <VALUE>true</VALUE>
-      <PROFILE_URI>PRF_DT_IF_COM_STATELESS</PROFILE_URI>
-     </WSSOAPPROP>
-     <WSSOAPPROP>
-      <WSNAME>ZGY_FM_WEB</WSNAME>
-      <VERSION>A</VERSION>
       <FEATURE>http://www.sap.com/NW05/soap/features/blocking/</FEATURE>
       <SOAPAPP>FUNC</SOAPAPP>
       <FUNCREF>ZGY_FM_WEB</FUNCREF>
@@ -1180,6 +1140,46 @@
       <PROPNAME>mep</PROPNAME>
       <VALUE>RequestResponse</VALUE>
       <PROFILE_URI>PRF_DT_OP_COM_SYNC</PROFILE_URI>
+     </WSSOAPPROP>
+     <WSSOAPPROP>
+      <WSNAME>ZGY_FM_WEB</WSNAME>
+      <VERSION>A</VERSION>
+      <FEATURE>http://www.sap.com/webas/630/soap/features/authentication/</FEATURE>
+      <SOAPAPP>FUNC</SOAPAPP>
+      <PROPNUM>0001</PROPNUM>
+      <PROPNAME>AuthenticationLevel</PROPNAME>
+      <VALUE>Basic</VALUE>
+      <PROFILE_URI>PRF_DT_IF_SEC_LOW</PROFILE_URI>
+     </WSSOAPPROP>
+     <WSSOAPPROP>
+      <WSNAME>ZGY_FM_WEB</WSNAME>
+      <VERSION>A</VERSION>
+      <FEATURE>http://www.sap.com/webas/630/soap/features/session/</FEATURE>
+      <SOAPAPP>FUNC</SOAPAPP>
+      <PROPNUM>0001</PROPNUM>
+      <PROPNAME>enableSession</PROPNAME>
+      <VALUE>false</VALUE>
+      <PROFILE_URI>PRF_DT_IF_COM_STATELESS</PROFILE_URI>
+     </WSSOAPPROP>
+     <WSSOAPPROP>
+      <WSNAME>ZGY_FM_WEB</WSNAME>
+      <VERSION>A</VERSION>
+      <FEATURE>http://www.sap.com/webas/630/soap/features/transportguarantee/</FEATURE>
+      <SOAPAPP>FUNC</SOAPAPP>
+      <PROPNUM>0001</PROPNUM>
+      <PROPNAME>Level</PROPNAME>
+      <VALUE>None</VALUE>
+      <PROFILE_URI>PRF_DT_IF_SEC_LOW</PROFILE_URI>
+     </WSSOAPPROP>
+     <WSSOAPPROP>
+      <WSNAME>ZGY_FM_WEB</WSNAME>
+      <VERSION>A</VERSION>
+      <FEATURE>http://www.sap.com/webas/640/soap/features/messageId/</FEATURE>
+      <SOAPAPP>FUNC</SOAPAPP>
+      <PROPNUM>0001</PROPNUM>
+      <PROPNAME>enableMessageId</PROPNAME>
+      <VALUE>true</VALUE>
+      <PROFILE_URI>PRF_DT_IF_COM_STATELESS</PROFILE_URI>
      </WSSOAPPROP>
     </PWSSOAPPROP>
    </WEBI>
