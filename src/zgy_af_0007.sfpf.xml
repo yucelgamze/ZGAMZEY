@@ -18,6 +18,13 @@
      <ID/>
      <TEXT>Sales Details Adobe Form</TEXT>
     </FPCONTEXTT>
+    <FPCONTEXTT>
+     <NAME/>
+     <STATE/>
+     <LANGUAGE>T</LANGUAGE>
+     <ID>E827ECF3B45B1EDEA9C95B6FB48A0100</ID>
+     <TEXT>Grafik düğümü GRAPHIC</TEXT>
+    </FPCONTEXTT>
    </CONTEXTT>
    <LAYOUT href="#o1"/>
    <LAYOUTT>
@@ -60,7 +67,7 @@
      <NAME>IS_HEADER</NAME>
      <GENERATED/>
      <STATE>A</STATE>
-     <CONDITION href="#o47"/>
+     <CONDITION href="#o49"/>
      <PARENT href="#o2"/>
      <SUCCESSOR href="#o18"/>
      <CHILD href="#o4"/>
@@ -229,7 +236,7 @@
      <NAME>IT_ITEMS</NAME>
      <GENERATED/>
      <STATE>A</STATE>
-     <CONDITION href="#o46"/>
+     <CONDITION href="#o48"/>
      <PARENT href="#o2"/>
      <SUCCESSOR href="#o36"/>
      <CHILD href="#o20"/>
@@ -430,9 +437,9 @@
      <NAME>SFPSY</NAME>
      <GENERATED/>
      <STATE>A</STATE>
-     <CONDITION href="#o45"/>
+     <CONDITION href="#o47"/>
      <PARENT href="#o2"/>
-     <SUCCESSOR/>
+     <SUCCESSOR href="#o45"/>
      <CHILD href="#o37"/>
     </CL_FP_NODE>
     <CL_FP_STRUCTURE classVersion="1">
@@ -527,19 +534,45 @@
      <CONDITIONS/>
     </CL_FP_CONDITION>
    </cls:CL_FP_CONDITION>
-   <cls:CL_FP_CONDITION id="o45">
+   <cls:CL_FP_GRAPHIC_CONTENT id="o45">
+    <CL_FP_NODE classVersion="1">
+     <ID>E827ECF3B45B1EDEA9C95B6FB48A0100</ID>
+     <NAME>GRAPHIC</NAME>
+     <GENERATED/>
+     <STATE>A</STATE>
+     <CONDITION href="#o46"/>
+     <PARENT href="#o2"/>
+     <SUCCESSOR/>
+     <CHILD/>
+    </CL_FP_NODE>
+    <CL_FP_GRAPHIC classVersion="1"/>
+    <CL_FP_GRAPHIC_CONTENT classVersion="1">
+     <GRAPHIC_FIELD>GG_LOGO</GRAPHIC_FIELD>
+     <GRAPHIC_MIME>
+      <MIME>IMAGE/BMP</MIME>
+      <MIMEFIELD/>
+     </GRAPHIC_MIME>
+    </CL_FP_GRAPHIC_CONTENT>
+   </cls:CL_FP_GRAPHIC_CONTENT>
+   <cls:CL_FP_CONDITION id="o46">
+    <CL_FP_CONDITION classVersion="1">
+     <NODE href="#o45"/>
+     <CONDITIONS/>
+    </CL_FP_CONDITION>
+   </cls:CL_FP_CONDITION>
+   <cls:CL_FP_CONDITION id="o47">
     <CL_FP_CONDITION classVersion="1">
      <NODE href="#o36"/>
      <CONDITIONS/>
     </CL_FP_CONDITION>
    </cls:CL_FP_CONDITION>
-   <cls:CL_FP_CONDITION id="o46">
+   <cls:CL_FP_CONDITION id="o48">
     <CL_FP_CONDITION classVersion="1">
      <NODE href="#o18"/>
      <CONDITIONS/>
     </CL_FP_CONDITION>
    </cls:CL_FP_CONDITION>
-   <cls:CL_FP_CONDITION id="o47">
+   <cls:CL_FP_CONDITION id="o49">
     <CL_FP_CONDITION classVersion="1">
      <NODE href="#o3"/>
      <CONDITIONS/>

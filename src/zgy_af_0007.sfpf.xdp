@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xfa generator="AdobeLiveCycleDesigner_V11.0.9.20230422.1.42_SAP" APIVersion="3.6.23111.0"?><xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2023-12-20T10:10:25Z" uuid="14ff4476-0739-45e9-859f-011a1505739f">
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.9.20230422.1.42_SAP" APIVersion="3.6.23111.0"?><xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2023-12-29T13:28:45Z" uuid="14ff4476-0739-45e9-859f-011a1505739f">
 <template xmlns:xliff="urn:oasis:names:tc:xliff:document:1.1" xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
    <?formServer defaultPDFRenderFormat acrobat10.0dynamic?>
    <subform layout="tb" locale="tr_TR" name="data" restoreState="auto">
@@ -88,7 +88,7 @@
                      <picture>date{DD.MM.YYYY}</picture>
                   </format>
                </field>
-               <draw h="5.2331mm" name="Text2" w="38.812mm" x="152.4mm" y="9.525mm">
+               <draw h="5.2331mm" name="Text2" w="38.812mm" x="6.35mm" y="3.175mm">
                   <ui>
                      <textEdit/>
                   </ui>
@@ -101,8 +101,21 @@
                   <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
                   <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
                </draw>
-               <?templateDesigner expand 1?></subform>
-            <?templateDesigner expand 1?>
+               <?templateDesigner expand 1?>
+               <field h="31.75mm" name="ImageField1" w="69.85mm" x="133.35mm">
+                  <ui>
+                     <imageEdit/>
+                  </ui>
+                  <caption placement="bottom" reserve="5mm">
+                     <font typeface="Arial"/>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text xliff:rid="8276C093-7D31-4AD9-B028-5D6780875215">LOGO</text>
+                     </value>
+                  </caption>
+                  <bind match="dataRef" ref="$.GRAPHIC"/>
+               </field>
+            </subform>
             <draw name="Pages" x="104.775mm" y="269.875mm">
                <ui>
                   <textEdit>
@@ -170,7 +183,7 @@
                <?templateDesigner floatingFieldPlaceholder ##?>
                <bind match="none"/>
             </field>
-         </pageArea>
+            <?templateDesigner expand 1?></pageArea>
          <?templateDesigner expand 1?></pageSet>
       <subform layout="tb" name="ITEMS" w="8in">
          <subform columnWidths="28.5714mm 28.5714mm 28.5714mm 28.5714mm 28.5714mm 28.5714mm 28.5714mm" layout="table" name="IT_ITEMS">
@@ -450,18 +463,18 @@
          <text name="version">11.0.9.20230422.1.42.2</text>
       </desc>
       <?templateDesigner expand 1?>
-      <?renderCache.subset "Arial" 0 0 UTF-16 2 172 000300060011001200240025002700280029002A002E002F003000310033003500360037003C00440045004700480049004A004B004C004F00500052005500560057005B005D005E0060006800D500F700F800F900FA?>
-      <?renderCache.subset "Arial" 1 0 UTF-16 2 152 00030006001100120024002500270028002A002E002F003000310033003500360037003C0044004500470048004A004C004F0050005500560057005D005E0060006800D500F700F800F900FA?></subform>
+      <?renderCache.subset "Arial" 0 0 UTF-16 2 80 000300110029002A002C002F00320037003C004400470048004A004B004C004F005000550057005B?>
+      <?renderCache.subset "Arial" 1 0 UTF-16 2 140 0003000600120024002500270028002A002E002F003000310033003500360037003C00440048004A004C004F0050005500560057005D005E0060006800D500F700F800F900FA?></subform>
    <?templateDesigner DefaultPreviewDynamic 1?>
    <?templateDesigner DefaultRunAt client?>
    <?templateDesigner Grid show:1, snap:1, units:0, color:ff8080, origin:(0,0), interval:(125000,125000)?>
-   <?templateDesigner FormTargetVersion 33?>
    <?templateDesigner WidowOrphanControl 0?>
    <?templateDesigner DefaultCaptionFontSettings face:Arial;size:10;weight:normal;style:normal?>
    <?templateDesigner DefaultValueFontSettings face:Arial;size:10;weight:normal;style:normal?>
    <?templateDesigner DefaultLanguage JavaScript?>
    <?acrobat JavaScript strictScoping?>
-   <?templateDesigner Zoom 100?>
+   <?templateDesigner FormTargetVersion 33?>
+   <?templateDesigner Zoom 82?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
@@ -479,10 +492,8 @@
    </agent>
    <present>
       <!--  [0..n]  -->
-      <destination>pdf</destination>
       <pdf>
          <!--  [0..n]  -->
-         <fontInfo/>
          <version>1.7</version>
          <adobeExtensionLevel>8</adobeExtensionLevel>
       </pdf>
@@ -537,6 +548,7 @@
             <USERNAME/>
             <SUBRC/>
          </SFPSY>
+         <GRAPHIC/>
       </data>
    </dd:dataDescription>
 </xfa:datasets>
@@ -648,7 +660,7 @@
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 9.0-c000 79.cca54b0, 2022/11/26-09:29:55        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:pdfuaid="http://www.aiim.org/pdfua/ns/id/" xmlns:pdf="http://ns.adobe.com/pdf/1.3/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:desc="http://ns.adobe.com/xfa/promoted-desc/" rdf:about="">
-         <xmp:MetadataDate>2023-12-20T10:10:25Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2023-12-29T13:28:45Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
          <pdfuaid:part>1</pdfuaid:part>
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>

@@ -88,9 +88,27 @@
      <INTERFACE_DATA href="#o1"/>
     </CL_FP_INTERFACE_DATA_CHANGED>
     <CL_FP_CODING classVersion="1">
-     <INPUT_PARAMETERS/>
-     <OUTPUT_PARAMETERS/>
-     <INITIALIZATION/>
+     <INPUT_PARAMETERS>
+      <FPPARAMETER>GG_LOGO</FPPARAMETER>
+     </INPUT_PARAMETERS>
+     <OUTPUT_PARAMETERS>
+      <FPPARAMETER>GG_LOGO</FPPARAMETER>
+     </OUTPUT_PARAMETERS>
+     <INITIALIZATION>
+      <FPCLINE>&quot;BCOL = renkli BMON = siyah beyaz</FPCLINE>
+      <FPCLINE>CALL METHOD cl_ssf_xsf_utilities=&gt;get_bds_graphic_as_bmp</FPCLINE>
+      <FPCLINE>  EXPORTING</FPCLINE>
+      <FPCLINE>    p_object       = &apos;GRAPHICS&apos;   &quot; SAPscript Graphics Management: Application object</FPCLINE>
+      <FPCLINE>    p_name         = &apos;VLOGO&apos;  &quot; Name</FPCLINE>
+      <FPCLINE>    p_id           = &apos;BMAP&apos;   &quot; SAPscript Graphics Management: ID</FPCLINE>
+      <FPCLINE>    p_btype        = &apos;BCOL&apos;  &quot; SAPscript: Type of graphic</FPCLINE>
+      <FPCLINE>  RECEIVING</FPCLINE>
+      <FPCLINE>    p_bmp          = gg_logo   &quot; Graphic Data</FPCLINE>
+      <FPCLINE>  EXCEPTIONS</FPCLINE>
+      <FPCLINE>    not_found      = 1</FPCLINE>
+      <FPCLINE>    internal_error = 2</FPCLINE>
+      <FPCLINE>    OTHERS         = 3.</FPCLINE>
+     </INITIALIZATION>
      <FORMS/>
     </CL_FP_CODING>
    </cls:CL_FP_CODING>

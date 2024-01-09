@@ -24,9 +24,8 @@ FUNCTION zgy_fm_0001.
       ELSE.
         gs_sorgu-sorgu = 'YOK'.
       ENDIF.
+      APPEND gs_sorgu TO et_sorgu.
     ENDLOOP.
-
-    APPEND gs_sorgu TO et_sorgu.
 
   ENDIF.
 

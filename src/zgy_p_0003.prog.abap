@@ -203,41 +203,56 @@ go_http_client->request->set_header_fields(
   VALUE #( ( name = 'Content-Type'   value = 'application/json' )
            ( name = 'Authorization'  value = gv_access_token  ) ) ) .
 
-*DATA(lv_user) = '{'&&'"accountEnabled": true, "displayName": "Dummy Dummy", "mailNickname": "dummy.dummy", "userPrincipalName": "dummy@vektora.com",'&&
-*                  ' "passwordProfile" :'&&'{ '&&'forceChangePasswordNextSignIn": true, password": "1234Asd"'&&' }'.
 DATA(lv_user) =
 '{' &&
   '"accountEnabled": true,' &&
-  '"displayName": "Dummy Dummy",' &&
-  '"mailNickname": "dummy.dummy",' &&
-  '"userPrincipalName": "dummy@vektora.com",' &&
+  '"displayName": "Dummy2",' &&
+  '"mailNickname": "dummy2",' &&
+  '"userPrincipalName": "dummy2@vektora.com",' &&
   '"passwordProfile" :' && '{' &&
     '"forceChangePasswordNextSignIn": true,' &&
     '"password": "1234Asd."' &&
   '}' &&
 '}'.
 
-*go_http_client->request->set_cdata( lv_user ).
-*
-*CALL METHOD go_http_client->send
-*  EXCEPTIONS
-*    http_communication_failure = 1
-*    http_invalid_state         = 2
-*    http_processing_failed     = 3
-*    http_invalid_timeout       = 4
-*    OTHERS                     = 5.
-*
-*IF sy-subrc = 0.
-*  CALL METHOD go_http_client->receive
-*    EXCEPTIONS
-*      http_communication_failure = 1
-*      http_invalid_state         = 2
-*      http_processing_failed     = 3
-*      OTHERS                     = 4.
-*ENDIF.
-*
-*DATA(lv_create_response) = go_http_client->response->get_cdata( ).
-*
-*WRITE:lv_create_response.
+
+
+go_http_client->request->set_cdata( lv_user ).
+
+CALL METHOD go_http_client->send
+  EXCEPTIONS
+    http_communication_failure = 1
+    http_invalid_state         = 2
+    http_processing_failed     = 3
+    http_invalid_timeout       = 4
+    OTHERS                     = 5.
+
+IF sy-subrc = 0.
+  CALL METHOD go_http_client->receive
+    EXCEPTIONS
+      http_communication_failure = 1
+      http_invalid_state         = 2
+      http_processing_failed     = 3
+      OTHERS                     = 4.
+ENDIF.
+
+DATA(lv_create_response) = go_http_client->response->get_cdata( ).
+
+DATA:lr_data_create TYPE REF TO data.
+
+/ui2/cl_json=>deserialize(
+  EXPORTING
+    json             = lv_create_response
+  CHANGING
+    data             = lr_data_create
+).
+
+IF lr_data_create IS BOUND.
+  ASSIGN lr_data_create->* TO FIELD-SYMBOL(<data_create>).
+  ASSIGN COMPONENT `ID` OF STRUCTURE <data_create> TO FIELD-SYMBOL(<results_create>).
+  ASSIGN <results_create>->* TO FIELD-SYMBOL(<table2>).
+ENDIF.
+
+WRITE:<table2>.
 
 BREAK-POINT.
