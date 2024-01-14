@@ -125,9 +125,74 @@ gv_access_token = <table>.
 
 CONCATENATE 'Bearer' gv_access_token INTO gv_access_token_b SEPARATED BY space.
 
+*--------------------------------------------------------------------*
 
-*gv_url = 'https://graph.microsoft.com/v1.0/me'.
-gv_url = 'https://graph.microsoft.com/v1.0/users'.
+* GET USER LIST
+
+*--------------------------------------------------------------------*
+
+*
+*gv_url = 'https://graph.microsoft.com/v1.0/users'.
+*
+*CALL METHOD cl_http_client=>create_by_url
+*  EXPORTING
+*    url                = gv_url   " URL
+*  IMPORTING
+*    client             = go_http_client   " HTTP Client Abstraction
+*  EXCEPTIONS
+*    argument_not_found = 1
+*    plugin_not_active  = 2
+*    internal_error     = 3
+*    OTHERS             = 4.
+*
+*
+**go_http_client->request->set_header_fields(
+**  VALUE #( ( name = 'Content-Type' value = 'application/x-www-form-urlencoded'  )
+**           ( name = 'Accept'       value = 'application/json' ) ) ) .
+*go_http_client->request->set_method( 'GET' ).
+*go_http_client->request->set_header_field( name = 'Accept' value = 'application/json' ).
+*go_http_client->request->set_header_field( name  = 'Authorization' value = gv_access_token ).
+*
+**cl_http_utility=>set_request_uri(
+**request = go_http_client->request
+**uri = 'https://graph.microsoft.com/v1.0/users' ).
+*
+*CALL METHOD go_http_client->send
+*  EXCEPTIONS
+*    http_communication_failure = 1
+*    http_invalid_state         = 2
+*    http_processing_failed     = 3
+*    http_invalid_timeout       = 4
+*    OTHERS                     = 5.
+*
+*IF sy-subrc = 0.
+*  CALL METHOD go_http_client->receive
+*    EXCEPTIONS
+*      http_communication_failure = 1
+*      http_invalid_state         = 2
+*      http_processing_failed     = 3
+*      OTHERS                     = 4.
+*ENDIF.
+*gv_response = go_http_client->response->get_cdata( ).
+*
+*BREAK-POINT.
+*
+*
+*WRITE: gv_response.
+*
+**LOOP AT gt_users INTO gv_user.
+**  WRITE: / gv_user.
+**ENDLOOP.
+
+
+*--------------------------------------------------------------------*
+
+" UPDATE USER
+
+*--------------------------------------------------------------------*
+
+******gv_url = 'https://graph.microsoft.com/v1.0/users'.
+gv_url = 'https://graph.microsoft.com/v1.0/users/9eb85928-15e8-4dff-8b1f-588a9694c205'.
 
 CALL METHOD cl_http_client=>create_by_url
   EXPORTING
@@ -140,18 +205,35 @@ CALL METHOD cl_http_client=>create_by_url
     internal_error     = 3
     OTHERS             = 4.
 
+go_http_client->request->set_method('PATCH').
+go_http_client->request->set_header_fields(
+  VALUE #( ( name = 'Content-Type'   value = 'application/json' )
+           ( name = 'Authorization'  value = gv_access_token_b  ) ) ) .
 
-*go_http_client->request->set_header_fields(
-*  VALUE #( ( name = 'Content-Type' value = 'application/x-www-form-urlencoded'  )
-*           ( name = 'Accept'       value = 'application/json' ) ) ) .
-go_http_client->request->set_method( 'GET' ).
-go_http_client->request->set_header_field( name = 'Accept' value = 'application/json' ).
-go_http_client->request->set_header_field( name  = 'Authorization' value = gv_access_token ).
-*go_http_client->request->set_header_field( name  = 'Authorization' value = gv_access_token_b ).
 
-*cl_http_utility=>set_request_uri(
-*request = go_http_client->request
-*uri = 'https://graph.microsoft.com/v1.0/users' ).
+DATA(lv_user_u) =
+'{                             ' &&
+'  "businessPhones": [],       ' &&
+'  "officeLocation": " ",      ' &&
+'  "givenName": "Dummy1" ,     ' &&
+'  "surname": "Dummy2" ,       ' &&
+'  "mail": "dummy@vektora.com",' &&
+'  "mobilePhone": "123456789"  ' &&
+'}                             '.
+
+****DATA(lv_user) =
+****'{' &&
+****  '"accountEnabled": true,' &&
+****  '"displayName": "Dummy Dummy",' &&
+****  '"mailNickname": "dummy.dummy",' &&
+****  '"userPrincipalName": "dummy@vektora.com",' &&
+****  '"passwordProfile" :' && '{' &&
+****    '"forceChangePasswordNextSignIn": true,' &&
+****    '"password": "1234Asd."' &&
+****  '}' &&
+****'}'.
+
+go_http_client->request->set_cdata( lv_user_u ).
 
 CALL METHOD go_http_client->send
   EXCEPTIONS
@@ -169,21 +251,18 @@ IF sy-subrc = 0.
       http_processing_failed     = 3
       OTHERS                     = 4.
 ENDIF.
-gv_response = go_http_client->response->get_cdata( ).
+
+DATA(lv_update_response) = go_http_client->response->get_cdata( ).
+
+WRITE:lv_update_response.
 
 BREAK-POINT.
 
-
-WRITE: gv_response.
-
-*LOOP AT gt_users INTO gv_user.
-*  WRITE: / gv_user.
-*ENDLOOP.
-
-
 *--------------------------------------------------------------------*
 
-"CREATE
+"CREATE USER
+
+*--------------------------------------------------------------------*
 
 gv_url = 'https://graph.microsoft.com/v1.0/users'.
 
