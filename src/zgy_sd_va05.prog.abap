@@ -1,19 +1,16 @@
 *&---------------------------------------------------------------------*
-*& Report ZGAMZEY_STUDY2
+*& Report ZGY_ALV_TEMPLATE
 *&---------------------------------------------------------------------*
 *&
 *&---------------------------------------------------------------------*
-REPORT zgy_study3.
+REPORT zgy_sd_va05.
 
-
-INCLUDE zgy_study3_top.
-*zgamzey_study3_top,
-INCLUDE zgy_study3_lcl.
-*zgamzey_study3_lcl,
-INCLUDE zgy_study3_mdl.
-*zgamzey_study3_moduls.
-
+INCLUDE:
+zgy_sd_va05_top,
+zgy_sd_va05_lcl,
+zgy_sd_va05_mdl.
 
 START-OF-SELECTION.
-  CREATE OBJECT go_local.
+*  CREATE OBJECT go_local.
+  go_local = NEW lcl_class( ).
   go_local->call_screen( ).

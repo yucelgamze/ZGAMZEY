@@ -5,7 +5,7 @@
 *&---------------------------------------------------------------------*
 REPORT zgy_medium_bonus.
 
-INCLUDE:
+*INCLUDE:
 INCLUDE ZGY_MEDIUM_BONUS_TOP.
 *zgamzey_medium_bonus_top,
 INCLUDE ZGY_MEDIUM_BONUS_LCL.

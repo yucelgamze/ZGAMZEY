@@ -5,7 +5,7 @@
 *&---------------------------------------------------------------------*
 REPORT zgy_medium_pers.
 
-INCLUDE:
+*INCLUDE:
 INCLUDE ZGY_MEDIUM_PERS_TOP.
 *zgamzey_medium_pers_top,
 INCLUDE ZGY_MEDIUM_PERS_LCL.

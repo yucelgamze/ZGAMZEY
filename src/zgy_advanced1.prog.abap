@@ -5,11 +5,11 @@
 *&---------------------------------------------------------------------*
 REPORT zgy_advanced1.
 
-INCLUDE ZGY_ADVANCED1_TOP.
+INCLUDE zgy_advanced1_top.
 *INCLUDE:zgamzey_advanced1_top,
-INCLUDE ZGY_ADVANCED1_LCL.
+INCLUDE zgy_advanced1_lcl.
 *        zgamzey_advanced1_lcl,
-INCLUDE ZGY_ADVANCED1_moduls.
+INCLUDE zgy_advanced1_mdl.
 *        zgamzey_advanced1_moduls.
 
 START-OF-SELECTION.

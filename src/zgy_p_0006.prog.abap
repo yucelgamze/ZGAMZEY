@@ -12,6 +12,10 @@ zgy_p_0006_mdl.
 
 
 START-OF-SELECTION.
+  IF flag EQ abap_true.
+
 *  CREATE OBJECT go_local.
-  go_local = NEW lcl_class( ).
-  go_local->call_screen( ).
+    go_local = NEW lcl_class( ).
+    go_local->call_screen( ).
+
+  ENDIF.
