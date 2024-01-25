@@ -5,12 +5,12 @@
 *&---------------------------------------------------------------------*
 REPORT zgy_hard1.
 
-INCLUDE:
-INCLUDE ZGY_HARD1_TOP.
+
+INCLUDE zgy_hard1_top.
 * zgamzey_hard_1_top,
-INCLUDE ZGY_HARD1_LCL.
+INCLUDE zgy_hard1_lcl.
 * zgamzey_hard_1_lcl,
-INCLUDE ZGY_HARD1_MDL.
+INCLUDE zgy_hard1_mdl.
 * zgamzey_hard_1_moduls.
 
 START-OF-SELECTION.

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>GY Function Group</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZGY_FG_0002TOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZGY_FG_0002</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZGY_SAMPLE_INTERFACE_00001650</FUNCNAME>
+     <SHORT_TEXT>Schnittstellenbeschreibung zum Event 00001650</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_POSTAB</PARAMETER>
+       <DBFIELD>RFPOS</DBFIELD>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_POSTAB</PARAMETER>
+       <DBFIELD>RFPOS</DBFIELD>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_POSTAB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Einzelposten</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_POSTAB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Ergänzter Einzelposten</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

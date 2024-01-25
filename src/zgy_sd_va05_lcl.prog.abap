@@ -136,12 +136,16 @@ CLASS lcl_class IMPLEMENTATION.
       tvtwt~vtext AS dist_ch,
       tspat~vtext AS div_name,
       tvakt~bezei,
+      tvakt~spras,
+      tvkot~spras,
+      tvtwt~spras,
+      tspat~spras,
       adrc~xpcpt  AS sold_to,
       adcp~xpcpt  AS partner,
       veda~vaktsch AS actiond
         FROM vbak
         LEFT JOIN vbkd  ON vbak~vbeln EQ vbkd~vbeln
-        LEFT JOIN vbpa  ON vbkd~vbeln EQ vbpa~vbeln AND vbpa~parvw EQ 'WE'
+        LEFT JOIN vbpa  ON vbkd~vbeln EQ vbpa~vbeln AND vbpa~parvw EQ 'AG'
         LEFT JOIN vbap  ON vbak~vbeln EQ vbap~vbeln
         LEFT JOIN veda  ON vbap~vbeln EQ veda~vbeln AND veda~vbeln EQ 40000000
         LEFT JOIN vbep  ON vbap~vbeln EQ vbep~vbeln
@@ -153,6 +157,7 @@ CLASS lcl_class IMPLEMENTATION.
         LEFT JOIN adrc  ON adrc~addrnumber EQ kna1~adrnr
         LEFT JOIN adcp  ON adrc~addrnumber EQ adcp~addrnumber
         FOR ALL ENTRIES IN @lt_itab
+*        inner join @lt_itab as lt
         WHERE "vbak~vbeln IN @so_vbeln AND
               vbak~auart IN @so_auart AND
               vbak~kunnr IN @so_kunnr AND
@@ -161,14 +166,17 @@ CLASS lcl_class IMPLEMENTATION.
               vbkd~bstkd IN @so_bstkd AND
               vbak~erdat IN @so_erdat AND
 
-              vbak~vbeln EQ @lt_itab-vbeln
-
-*              tvkot~vtext EQ 'T' AND
-*              tvtwt~vtext EQ 'T' AND
-*              tspat~vtext EQ 'T' AND
-*              tvakt~bezei EQ 'T'
+              vbak~vbeln EQ @lt_itab-vbeln AND
+              tvakt~spras EQ 'T' AND
+              tvkot~spras EQ 'T' AND
+              tvtwt~spras EQ 'T' AND
+              tspat~spras EQ 'T'
               INTO CORRESPONDING FIELDS OF TABLE @gt_alv.
+    ELSE.
+      MESSAGE |Veri Bulunamamıştır!| TYPE 'I' DISPLAY LIKE 'E'.
     ENDIF.
+    SORT gt_alv BY vbeln.
+    DELETE ADJACENT DUPLICATES FROM gt_alv COMPARING vbeln.
 
     IF lt_domain IS NOT INITIAL.
 
@@ -222,8 +230,6 @@ CLASS lcl_class IMPLEMENTATION.
       ENDLOOP.
 
     ENDIF.
-
-    DELETE ADJACENT DUPLICATES FROM gt_alv COMPARING vbeln.
 
   ENDMETHOD.
   METHOD call_screen.
