@@ -2,7 +2,7 @@
 *& Include          ZGY_P_TOP
 *&---------------------------------------------------------------------*
 TYPE-POOLS:icon.
-TABLES:t001w,mara,marc,t023,t023t.
+TABLES:t001w,mara,marc,t023,t023t,mard.
 
 CLASS lcl_class DEFINITION DEFERRED.
 DATA: go_local TYPE REF TO lcl_class.
@@ -30,7 +30,7 @@ TYPES:BEGIN OF gty_alv,
         meins4   TYPE mara-meins,
         asas     TYPE marc-mabst,
         meins5   TYPE mara-meins,
-        talep    TYPE marc-mabst,
+        talep    TYPE marc-mabst, "editable
         meins6   TYPE mara-meins,
         satol    TYPE xfeld,      "checkbox = abap_true
         satno    TYPE eban-banfn,

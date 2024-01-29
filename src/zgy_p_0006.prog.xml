@@ -18,8 +18,8 @@
       <DESCRIPT>ALV TEMPLATE</DESCRIPT>
       <TYPE>N</TYPE>
       <NEXTSCREEN>0100</NEXTSCREEN>
-      <LINES>027</LINES>
-      <COLUMNS>140</COLUMNS>
+      <LINES>026</LINES>
+      <COLUMNS>190</COLUMNS>
      </HEADER>
      <CONTAINERS>
       <RPY_DYCATT>
@@ -32,7 +32,7 @@
        <ELEMENT_OF>SCREEN</ELEMENT_OF>
        <LINE>002</LINE>
        <COLUMN>001</COLUMN>
-       <LENGTH>137</LENGTH>
+       <LENGTH>184</LENGTH>
        <HEIGHT>023</HEIGHT>
       </RPY_DYCATT>
      </CONTAINERS>
@@ -153,7 +153,7 @@
     <TIT>
      <RSMPE_TITT>
       <CODE>0100</CODE>
-      <TEXT>ALV TEMPLATE</TEXT>
+      <TEXT>SAT Oluşturma Program Raporu</TEXT>
      </RSMPE_TITT>
     </TIT>
    </CUA>

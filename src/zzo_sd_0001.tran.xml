@@ -14,7 +14,7 @@
    <TSTCT>
     <SPRSL>T</SPRSL>
     <TCODE>ZZO_SD_0001</TCODE>
-    <TTEXT>VA05 PO</TTEXT>
+    <TTEXT>VA05</TTEXT>
    </TSTCT>
   </asx:values>
  </asx:abap>

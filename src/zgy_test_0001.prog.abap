@@ -50,9 +50,68 @@ DATA:flag TYPE abap_bool.
 
 *--------------------------------------------------------------------*
 
-DATA lv_integer TYPE i VALUE 123.
-DATA lv_string TYPE string.
+*DATA lv_integer TYPE i VALUE 123.
+*DATA lv_string TYPE string.
+*
+*" Convert integer to string
+*lv_string = CONV #( lv_integer ).
+**WRITE: / 'Integer:', lv_integer, / 'String:', lv_string.
+*TABLES:vbak,tvakt.
+*
+*SELECT-OPTIONS:so_vbeln FOR vbak-vbeln NO INTERVALS.
+*
+*SELECT
+*vbak~vbeln,
+*tvakt~bezei
+*FROM vbak
+*LEFT JOIN tvakt ON vbak~auart EQ tvakt~auart
+*WHERE vbak~vbeln IN @so_vbeln AND
+*      tvakt~spras EQ 'T'
+*INTO TABLE @DATA(lt_test).
+*
+*LOOP AT lt_test ASSIGNING FIELD-SYMBOL(<lfs_test>).
+*  WRITE:<lfs_test>-bezei.
+*ENDLOOP.
+*--------------------------------------------------------------------*
 
-" Convert integer to string
-lv_string = CONV #( lv_integer ).
-WRITE: / 'Integer:', lv_integer, / 'String:', lv_string.
+
+*cl_demo_output=>write_data( gt_alv ).
+*cl_demo_output=>display( ).
+
+*--------------------------------------------------------------------*
+
+DATA: lv_destination TYPE rfcdest,
+      lt_data        TYPE TABLE OF tab512,
+      lt_fields      TYPE TABLE OF rfc_db_fld.
+
+lv_destination = 'LDAP_RFC'.
+"sm59
+"RFC Destination: LDAP_RFC
+"Connection Type: T (TCP/IP Connection)
+"Target Host: ldap.example.com
+"Target Service: 389
+
+CALL FUNCTION 'RFC_READ_TABLE'
+  DESTINATION lv_destination
+  EXPORTING
+    query_table    = 'YOUR_TABLE'
+  TABLES
+    data           = lt_data
+    fields         = lt_fields
+  EXCEPTIONS
+    system_failure = 1
+    OTHERS         = 2.
+
+IF sy-subrc = 0.
+  WRITE: 'Data read successfully.'.
+  LOOP AT lt_data INTO DATA(ls_data).
+    " Process the retrieved data as needed
+    WRITE: / ls_data.
+  ENDLOOP.
+ELSE.
+*  READ TABLE lt_data INDEX 1 TRANSPORTING NO FIELDS.
+*  IF sy-subrc = 0.
+*    MOVE-CORRESPONDING lt_data TO lv_error.
+*  ENDIF.
+  WRITE: 'Error reading data:'.", lv_error-message.
+ENDIF.
