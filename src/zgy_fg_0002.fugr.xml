@@ -9,6 +9,71 @@
    </INCLUDES>
    <FUNCTIONS>
     <item>
+     <FUNCNAME>ZGY_SAMPLE_INTERFACE_00001120</FUNCNAME>
+     <SHORT_TEXT>Schnittstellenbeschreibung zum Event 00001120</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_BUKRS</PARAMETER>
+       <DBFIELD>BKPF-BUKRS</DBFIELD>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_BELNR</PARAMETER>
+       <DBFIELD>BKPF-BELNR</DBFIELD>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_GJAHR</PARAMETER>
+       <DBFIELD>BKPF-GJAHR</DBFIELD>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_BUZEI</PARAMETER>
+       <DBFIELD>BSEG-BUZEI</DBFIELD>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_AKTYP</PARAMETER>
+       <DBFIELD>OFIWA-AKTYP</DBFIELD>
+       <OPTIONAL>X</OPTIONAL>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_XCHNG</PARAMETER>
+       <DBFIELD>OFIWA-XCHNG</DBFIELD>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_BUKRS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Buchungskreis</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_BELNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Belegnummer</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_GJAHR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Geschäftsjahr</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_BUZEI</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Buchungszeile</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_AKTYP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>A = Anzeigen, V = Ändern</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_XCHNG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Kennzeichen: Beleg wurde geändert</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
      <FUNCNAME>ZGY_SAMPLE_INTERFACE_00001650</FUNCNAME>
      <SHORT_TEXT>Schnittstellenbeschreibung zum Event 00001650</SHORT_TEXT>
      <IMPORT>
