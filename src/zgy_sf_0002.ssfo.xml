@@ -221,34 +221,23 @@
    <item>
     <OUTIN>I</OUTIN>
    </item>
+   <item>
+    <OUTIN>I</OUTIN>
+   </item>
   </GPLIST>
   <GCODING>
-   <item>*</item>
-   <item>*SELECT</item>
-   <item>*vbak~vbeln  AS siparis,</item>
-   <item>*vbap~posnr  AS kalem,</item>
-   <item>*vbap~arktx  AS urun_ack,</item>
-   <item>*vbap~matnr  AS urun_kod,</item>
-   <item>*vbap~kwmeng AS miktar,</item>
-   <item>*vbap~vrkme  AS satıs_obr,</item>
-   <item>*vbap~netwr  AS birim_fiyat,</item>
-   <item>*vbap~netwr  AS tutar,</item>
-   <item>*vbap~waerk  AS para_br</item>
-   <item>*FROM vbak</item>
-   <item>*LEFT JOIN vbap ON vbap~vbeln EQ vbak~vbeln</item>
-   <item>*INTO CORRESPONDING FIELDS OF TABLE @gt_table.</item>
-   <item>*</item>
-   <item>*gs_table-no = 1.</item>
-   <item>*</item>
-   <item>*LOOP AT gt_table ASSIGNING FIELD-SYMBOL(&lt;lfs_table&gt;).</item>
-   <item>*  &lt;lfs_table&gt;-no = &lt;lfs_table&gt;-no + 1.</item>
-   <item>*ENDLOOP.</item>
-   <item/>
-   <item/>
    <item/>
    <item/>
    <item/>
   </GCODING>
+  <REFFIELDS>
+   <item>
+    <ACTIVE>X</ACTIVE>
+    <DATATYPE>CURR</DATATYPE>
+    <VALUE>GS_TABLE-BIRIM_FIYAT</VALUE>
+    <UNIT>GS_TABLE-PARA_BR</UNIT>
+   </item>
+  </REFFIELDS>
   <sf:VARHEADER>
    <sf:item>
     <PAGEFORMAT>DINA4</PAGEFORMAT>
@@ -5673,6 +5662,73 @@
                             <sf:SUCC>
                              <sf:item>
                               <sf:NODE>
+                               <NODETYPE>CO</NODETYPE>
+                               <sf:OBJ>
+                                <sf:CODE>
+                                 <NAME>
+                                  <INAME>%CODE1</INAME>
+                                 </NAME>
+                                 <CAPTION>Yeni prog.satırları 1</CAPTION>
+                                 <PLIST>
+                                  <item>
+                                   <OPD>GV_TOPLAM</OPD>
+                                   <OUTIN>I</OUTIN>
+                                  </item>
+                                  <item>
+                                   <OPD>GS_TABLE</OPD>
+                                   <OUTIN>I</OUTIN>
+                                  </item>
+                                 </PLIST>
+                                 <CODE>
+                                  <item>gv_toplam = CONV #( gs_table-tutar ).</item>
+                                  <item>CLEAR:gv_toplam.</item>
+                                  <item/>
+                                  <item>*LOOP AT it_table INTO gs_table.</item>
+                                  <item>  IF gs_table-para_br EQ &apos;TRY&apos;.</item>
+                                  <item>    gv_toplam = gv_toplam + gs_table-tutar.</item>
+                                  <item>  ENDIF.</item>
+                                  <item>*ENDLOOP.</item>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                  <item/>
+                                 </CODE>
+                                 <T_CAPTION>
+                                  <item>
+                                   <LANGU>T</LANGU>
+                                   <FORMNAME>ZGY_SF_0002</FORMNAME>
+                                   <OBJTYPE>CO</OBJTYPE>
+                                   <INAME>%CODE1</INAME>
+                                   <CAPTION>Yeni prog.satırları 1</CAPTION>
+                                  </item>
+                                 </T_CAPTION>
+                                </sf:CODE>
+                               </sf:OBJ>
+                               <sf:SUCC/>
+                              </sf:NODE>
+                             </sf:item>
+                             <sf:item>
+                              <sf:NODE>
                                <NODETYPE>TI</NODETYPE>
                                <sf:OBJ>
                                 <sf:TEXT>
@@ -5814,57 +5870,6 @@
                              </sf:OUTATTR>
                             </sf:OUTATTR>
                             <sf:SUCC>
-                             <sf:item>
-                              <sf:NODE>
-                               <NODETYPE>CO</NODETYPE>
-                               <sf:OBJ>
-                                <sf:CODE>
-                                 <NAME>
-                                  <INAME>%CODE1</INAME>
-                                 </NAME>
-                                 <CAPTION>Yeni prog.satırları 1</CAPTION>
-                                 <PLIST>
-                                  <item>
-                                   <OPD>GV_TOPLAM</OPD>
-                                   <OUTIN>I</OUTIN>
-                                  </item>
-                                  <item>
-                                   <OPD>GS_TABLE</OPD>
-                                   <OUTIN>I</OUTIN>
-                                  </item>
-                                  <item>
-                                   <OPD>IT_TABLE</OPD>
-                                   <OUTIN>I</OUTIN>
-                                  </item>
-                                 </PLIST>
-                                 <CODE>
-                                  <item/>
-                                  <item>gv_toplam = CONV #( gs_table-tutar ).</item>
-                                  <item>CLEAR:gv_toplam.</item>
-                                  <item/>
-                                  <item>LOOP AT it_table INTO gs_table.</item>
-                                  <item>  IF gs_table-para_br EQ &apos;TRY&apos;.</item>
-                                  <item>    gv_toplam = gv_toplam + gs_table-tutar.</item>
-                                  <item>  ENDIF.</item>
-                                  <item>ENDLOOP.</item>
-                                  <item/>
-                                  <item/>
-                                  <item/>
-                                 </CODE>
-                                 <T_CAPTION>
-                                  <item>
-                                   <LANGU>T</LANGU>
-                                   <FORMNAME>ZGY_SF_0002</FORMNAME>
-                                   <OBJTYPE>CO</OBJTYPE>
-                                   <INAME>%CODE1</INAME>
-                                   <CAPTION>Yeni prog.satırları 1</CAPTION>
-                                  </item>
-                                 </T_CAPTION>
-                                </sf:CODE>
-                               </sf:OBJ>
-                               <sf:SUCC/>
-                              </sf:NODE>
-                             </sf:item>
                              <sf:item>
                               <sf:NODE>
                                <NODETYPE>TI</NODETYPE>
@@ -6501,13 +6506,13 @@
               <U_WFRAME>PT</U_WFRAME>
               <U_WBOXV>CM</U_WBOXV>
               <U_WBOXH>CM</U_WBOXH>
-              <WLEFT>0.27</WLEFT>
+              <WLEFT>0.07</WLEFT>
               <U_WLEFT>CM</U_WLEFT>
-              <WWIDTH>20.00</WWIDTH>
+              <WWIDTH>20.27</WWIDTH>
               <U_WWIDTH>CM</U_WWIDTH>
-              <WTOP>12.87</WTOP>
+              <WTOP>13.33</WTOP>
               <U_WTOP>CM</U_WTOP>
-              <WHEIGHT>13.74</WHEIGHT>
+              <WHEIGHT>11.27</WHEIGHT>
               <U_WHEIGHT>CM</U_WHEIGHT>
               <BORDER>
                <LEFTATTR>
@@ -6642,11 +6647,11 @@
               <U_WFRAME>PT</U_WFRAME>
               <U_WBOXV>CM</U_WBOXV>
               <U_WBOXH>CM</U_WBOXH>
-              <WLEFT>9.20</WLEFT>
+              <WLEFT>8.00</WLEFT>
               <U_WLEFT>CM</U_WLEFT>
-              <WWIDTH>4.00</WWIDTH>
+              <WWIDTH>6.20</WWIDTH>
               <U_WWIDTH>CM</U_WWIDTH>
-              <WTOP>27.60</WTOP>
+              <WTOP>25.53</WTOP>
               <U_WTOP>CM</U_WTOP>
               <WHEIGHT>2.00</WHEIGHT>
               <U_WHEIGHT>CM</U_WHEIGHT>

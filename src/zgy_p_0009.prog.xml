@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <PROGDIR>
-    <NAME>ZGY_P_0008</NAME>
+    <NAME>ZGY_P_0009</NAME>
     <SUBC>1</SUBC>
     <RLOAD>T</RLOAD>
     <FIXPT>X</FIXPT>
@@ -12,14 +12,14 @@
    <DYNPROS>
     <item>
      <HEADER>
-      <PROGRAM>ZGY_P_0008</PROGRAM>
+      <PROGRAM>ZGY_P_0009</PROGRAM>
       <SCREEN>0100</SCREEN>
       <LANGUAGE>T</LANGUAGE>
-      <DESCRIPT>ALV TEMPLATE</DESCRIPT>
+      <DESCRIPT>Sales Details</DESCRIPT>
       <TYPE>N</TYPE>
       <NEXTSCREEN>0100</NEXTSCREEN>
       <LINES>027</LINES>
-      <COLUMNS>122</COLUMNS>
+      <COLUMNS>079</COLUMNS>
      </HEADER>
      <CONTAINERS>
       <RPY_DYCATT>
@@ -30,10 +30,10 @@
        <TYPE>CUST_CTRL</TYPE>
        <NAME>CC_ALV</NAME>
        <ELEMENT_OF>SCREEN</ELEMENT_OF>
-       <LINE>002</LINE>
+       <LINE>001</LINE>
        <COLUMN>002</COLUMN>
-       <LENGTH>093</LENGTH>
-       <HEIGHT>023</HEIGHT>
+       <LENGTH>060</LENGTH>
+       <HEIGHT>026</HEIGHT>
       </RPY_DYCATT>
      </CONTAINERS>
      <FIELDS>
@@ -103,17 +103,17 @@
       <FUN_TEXT>Cancel</FUN_TEXT>
      </RSMPE_FUNT>
      <RSMPE_FUNT>
-      <CODE>&amp;F5</CODE>
+      <CODE>&amp;SF</CODE>
       <TEXTNO>001</TEXTNO>
       <TEXT_TYPE>S</TEXT_TYPE>
       <TEXT_NAME>ICON_PRINT</TEXT_NAME>
       <ICON_ID>@0X@</ICON_ID>
-      <FUN_TEXT>Çıktı Al</FUN_TEXT>
-      <ICON_TEXT>Çıktı Al</ICON_TEXT>
-      <INFO_TEXT>Çıktı Al</INFO_TEXT>
+      <FUN_TEXT>Smartform</FUN_TEXT>
+      <ICON_TEXT>Print Smartform</ICON_TEXT>
+      <INFO_TEXT>Print Smartform</INFO_TEXT>
      </RSMPE_FUNT>
      <RSMPE_FUNT>
-      <CODE>&amp;SF</CODE>
+      <CODE>&amp;SMARTFORM</CODE>
       <TEXTNO>001</TEXTNO>
       <TEXT_TYPE>S</TEXT_TYPE>
       <TEXT_NAME>ICON_PRINT</TEXT_NAME>
@@ -147,7 +147,7 @@
      <RSMPE_PFK>
       <CODE>000001</CODE>
       <PFNO>13</PFNO>
-      <FUNCODE>&amp;F5</FUNCODE>
+      <FUNCODE>&amp;SMARTFORM</FUNCODE>
       <FUNNO>001</FUNNO>
      </RSMPE_PFK>
      <RSMPE_PFK>
@@ -170,11 +170,11 @@
      </RSMPE_STAF>
      <RSMPE_STAF>
       <STATUS>0100</STATUS>
-      <FUNCTION>&amp;F5</FUNCTION>
+      <FUNCTION>&amp;SF</FUNCTION>
      </RSMPE_STAF>
      <RSMPE_STAF>
       <STATUS>0100</STATUS>
-      <FUNCTION>&amp;SF</FUNCTION>
+      <FUNCTION>&amp;SMARTFORM</FUNCTION>
      </RSMPE_STAF>
     </SET>
     <DOC>
@@ -201,19 +201,25 @@
     <TIT>
      <RSMPE_TITT>
       <CODE>0100</CODE>
-      <TEXT>ALV SMARTFORMS</TEXT>
+      <TEXT>Sales Details</TEXT>
      </RSMPE_TITT>
     </TIT>
    </CUA>
    <TPOOL>
     <item>
+     <ID>I</ID>
+     <KEY>000</KEY>
+     <ENTRY>Sales Details Selection Screen</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
      <ID>R</ID>
-     <ENTRY>ALV SMARTFORMS</ENTRY>
-     <LENGTH>24</LENGTH>
+     <ENTRY>Satış verilerini smartforma basan program</ENTRY>
+     <LENGTH>41</LENGTH>
     </item>
     <item>
      <ID>S</ID>
-     <KEY>SO_MATNR</KEY>
+     <KEY>SO_VBELN</KEY>
      <ENTRY>.</ENTRY>
      <LENGTH>9</LENGTH>
      <SPLIT>D</SPLIT>
