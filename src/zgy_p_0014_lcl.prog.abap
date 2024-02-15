@@ -210,7 +210,6 @@ CLASS lcl_class IMPLEMENTATION.
         ENDIF.
 
         IF <gfs_s_table> IS ASSIGNED.
-          "--------> NEDEN DOĞRU DEĞER GELMİYOR
           ASSIGN COMPONENT lv_field OF STRUCTURE <gfs_s_table> TO <gfs>.
           IF <gfs> IS ASSIGNED.
             <gfs> = CONV #( <lfs_s_group>-wrbtr ).
