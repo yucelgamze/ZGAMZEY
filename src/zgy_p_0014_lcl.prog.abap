@@ -88,8 +88,7 @@ CLASS lcl_class IMPLEMENTATION.
     ENDCASE.
   ENDMETHOD.
   METHOD set_fcat.
-    DATA:lv_count TYPE int4 VALUE 4,
-         lv_field TYPE char30.
+    DATA:lv_count TYPE int4 VALUE 4.
 
     CLEAR gs_fcat.
     gs_fcat =  VALUE #( col_pos   = 1
@@ -147,7 +146,7 @@ CLASS lcl_class IMPLEMENTATION.
         gs_fcat = VALUE #(
                           col_pos   = lv_count
                           datatype  = 'CHAR'
-                          intlen    = 30
+                          intlen    = 20
                           fieldname = |{ ay }{ <lfs_dat>-spmon+0(4) }|
                           scrtext_s = |{ ay }{ <lfs_dat>-spmon+0(4) }|
                           scrtext_m = |{ ay }{ <lfs_dat>-spmon+0(4) }|
@@ -199,7 +198,7 @@ CLASS lcl_class IMPLEMENTATION.
         IF sy-subrc IS INITIAL.
           ay = CONV string( ls_domain-ddtext ).
         ENDIF.
-        lv_field = |{ ay }{ <lfs_s_group>-spmon+0(4) }|.
+        DATA(lv_field) = |{ ay }{ <lfs_s_group>-spmon+0(4) }|.
 
         IF <gfs_s_table> IS ASSIGNED.
           ASSIGN COMPONENT 'ISIM' OF STRUCTURE <gfs_s_table> TO <gfs>.
