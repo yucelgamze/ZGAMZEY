@@ -199,6 +199,13 @@
      <ENTRY>satış verilerini adobe forma basan program raporu</ENTRY>
      <LENGTH>49</LENGTH>
     </item>
+    <item>
+     <ID>S</ID>
+     <KEY>SO_VBELN</KEY>
+     <ENTRY>.</ENTRY>
+     <LENGTH>9</LENGTH>
+     <SPLIT>D</SPLIT>
+    </item>
    </TPOOL>
   </asx:values>
  </asx:abap>

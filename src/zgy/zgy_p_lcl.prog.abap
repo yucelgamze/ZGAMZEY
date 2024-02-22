@@ -41,9 +41,9 @@ CLASS lcl_class IMPLEMENTATION.
         ct_fieldcat      = gt_fcat.
   ENDMETHOD.
   METHOD set_layout.
-    gs_layout-zebra = abap_true.
-    gs_layout-cwidth_opt = abap_true.
-    gs_layout-col_opt = abap_true.
+    gs_layout = VALUE #( zebra      = abap_true
+                         cwidth_opt = abap_true
+                         col_opt    = abap_true ).
   ENDMETHOD.
   METHOD display_alv.
     IF go_alv_grid IS INITIAL.

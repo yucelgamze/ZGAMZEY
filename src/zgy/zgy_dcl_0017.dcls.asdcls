@@ -1,0 +1,11 @@
+@EndUserText.label: 'Data Control Language for ZGY_DDL_0017'
+@MappingRole: true
+define role ZGY_DCL_0017 {
+    grant
+        select
+            on
+                zgy_ddl_0017
+                    where
+                        meins = 'ST';
+                        
+}

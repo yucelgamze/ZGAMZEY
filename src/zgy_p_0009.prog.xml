@@ -15,11 +15,11 @@
       <PROGRAM>ZGY_P_0009</PROGRAM>
       <SCREEN>0100</SCREEN>
       <LANGUAGE>T</LANGUAGE>
-      <DESCRIPT>Sales Details</DESCRIPT>
+      <DESCRIPT>Kullanıcı Rolleri Listesi</DESCRIPT>
       <TYPE>N</TYPE>
       <NEXTSCREEN>0100</NEXTSCREEN>
       <LINES>027</LINES>
-      <COLUMNS>079</COLUMNS>
+      <COLUMNS>121</COLUMNS>
      </HEADER>
      <CONTAINERS>
       <RPY_DYCATT>
@@ -30,10 +30,10 @@
        <TYPE>CUST_CTRL</TYPE>
        <NAME>CC_ALV</NAME>
        <ELEMENT_OF>SCREEN</ELEMENT_OF>
-       <LINE>001</LINE>
+       <LINE>002</LINE>
        <COLUMN>002</COLUMN>
-       <LENGTH>060</LENGTH>
-       <HEIGHT>026</HEIGHT>
+       <LENGTH>077</LENGTH>
+       <HEIGHT>018</HEIGHT>
       </RPY_DYCATT>
      </CONTAINERS>
      <FIELDS>
@@ -94,43 +94,7 @@
       <TEXT_TYPE>S</TEXT_TYPE>
       <FUN_TEXT>Exit</FUN_TEXT>
      </RSMPE_FUNT>
-     <RSMPE_FUNT>
-      <CODE>&amp;BACK</CODE>
-      <TEXTNO>003</TEXTNO>
-      <TEXT_TYPE>S</TEXT_TYPE>
-      <TEXT_NAME>ICON_CANCEL</TEXT_NAME>
-      <ICON_ID>@0W@</ICON_ID>
-      <FUN_TEXT>Cancel</FUN_TEXT>
-     </RSMPE_FUNT>
-     <RSMPE_FUNT>
-      <CODE>&amp;SF</CODE>
-      <TEXTNO>001</TEXTNO>
-      <TEXT_TYPE>S</TEXT_TYPE>
-      <TEXT_NAME>ICON_PRINT</TEXT_NAME>
-      <ICON_ID>@0X@</ICON_ID>
-      <FUN_TEXT>Smartform</FUN_TEXT>
-      <ICON_TEXT>Print Smartform</ICON_TEXT>
-      <INFO_TEXT>Print Smartform</INFO_TEXT>
-     </RSMPE_FUNT>
-     <RSMPE_FUNT>
-      <CODE>&amp;SMARTFORM</CODE>
-      <TEXTNO>001</TEXTNO>
-      <TEXT_TYPE>S</TEXT_TYPE>
-      <TEXT_NAME>ICON_PRINT</TEXT_NAME>
-      <ICON_ID>@0X@</ICON_ID>
-      <FUN_TEXT>Smartform</FUN_TEXT>
-      <ICON_TEXT>Print Smartform</ICON_TEXT>
-      <INFO_TEXT>Print Smartform</INFO_TEXT>
-     </RSMPE_FUNT>
     </FUN>
-    <BUT>
-     <RSMPE_BUT>
-      <PFK_CODE>000001</PFK_CODE>
-      <CODE>0001</CODE>
-      <NO>01</NO>
-      <PFNO>16</PFNO>
-     </RSMPE_BUT>
-    </BUT>
     <PFK>
      <RSMPE_PFK>
       <CODE>000001</CODE>
@@ -140,41 +104,15 @@
      </RSMPE_PFK>
      <RSMPE_PFK>
       <CODE>000001</CODE>
-      <PFNO>12</PFNO>
-      <FUNCODE>&amp;BACK</FUNCODE>
-      <FUNNO>003</FUNNO>
-     </RSMPE_PFK>
-     <RSMPE_PFK>
-      <CODE>000001</CODE>
-      <PFNO>13</PFNO>
-      <FUNCODE>&amp;SMARTFORM</FUNCODE>
-      <FUNNO>001</FUNNO>
-     </RSMPE_PFK>
-     <RSMPE_PFK>
-      <CODE>000001</CODE>
       <PFNO>15</PFNO>
       <FUNCODE>&amp;BACK</FUNCODE>
       <FUNNO>002</FUNNO>
-     </RSMPE_PFK>
-     <RSMPE_PFK>
-      <CODE>000001</CODE>
-      <PFNO>16</PFNO>
-      <FUNCODE>&amp;SF</FUNCODE>
-      <FUNNO>001</FUNNO>
      </RSMPE_PFK>
     </PFK>
     <SET>
      <RSMPE_STAF>
       <STATUS>0100</STATUS>
       <FUNCTION>&amp;BACK</FUNCTION>
-     </RSMPE_STAF>
-     <RSMPE_STAF>
-      <STATUS>0100</STATUS>
-      <FUNCTION>&amp;SF</FUNCTION>
-     </RSMPE_STAF>
-     <RSMPE_STAF>
-      <STATUS>0100</STATUS>
-      <FUNCTION>&amp;SMARTFORM</FUNCTION>
      </RSMPE_STAF>
     </SET>
     <DOC>
@@ -201,7 +139,7 @@
     <TIT>
      <RSMPE_TITT>
       <CODE>0100</CODE>
-      <TEXT>Sales Details</TEXT>
+      <TEXT>Kullanıcı Rolleri Listesi</TEXT>
      </RSMPE_TITT>
     </TIT>
    </CUA>
@@ -209,20 +147,31 @@
     <item>
      <ID>I</ID>
      <KEY>000</KEY>
-     <ENTRY>Sales Details Selection Screen</ENTRY>
-     <LENGTH>60</LENGTH>
+     <ENTRY>Kullanıcı Rolleri Listesi Seçim Ekranı</ENTRY>
+     <LENGTH>76</LENGTH>
     </item>
     <item>
      <ID>R</ID>
-     <ENTRY>Satış verilerini smartforma basan program</ENTRY>
-     <LENGTH>41</LENGTH>
+     <ENTRY>Kullanıcı Rolleri Listesi</ENTRY>
+     <LENGTH>25</LENGTH>
     </item>
     <item>
      <ID>S</ID>
-     <KEY>SO_VBELN</KEY>
-     <ENTRY>.</ENTRY>
-     <LENGTH>9</LENGTH>
-     <SPLIT>D</SPLIT>
+     <KEY>P_FIN</KEY>
+     <ENTRY>Bitiş Tarihi</ENTRY>
+     <LENGTH>20</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_START</KEY>
+     <ENTRY>Başlangıç Tarihi</ENTRY>
+     <LENGTH>24</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>SO_BNAME</KEY>
+     <ENTRY>Kullanıcı Adı</ENTRY>
+     <LENGTH>21</LENGTH>
     </item>
    </TPOOL>
   </asx:values>

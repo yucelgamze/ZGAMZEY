@@ -231,7 +231,8 @@ CLASS lcl_class IMPLEMENTATION.
           container_name = 'CC_ALV'.   " Name of the Screen CustCtrl Name to Link Container To
       CREATE OBJECT go_alv_grid
         EXPORTING
-          i_parent = go_container.  " Parent Container
+*         i_parent = go_container.  " Parent Container
+          i_parent = cl_gui_container=>screen0.  " Parent Container
       CALL METHOD go_alv_grid->set_table_for_first_display
         EXPORTING
           is_layout       = gs_layout   " Layout

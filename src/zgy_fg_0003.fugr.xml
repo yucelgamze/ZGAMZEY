@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>GY Function Group</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZGY_FG_0003TOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZGY_FG_0003</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZGY_FM_0002</FUNCNAME>
+     <SHORT_TEXT>Malzeme Kontrolü FM</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>MATNR</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_EXIST</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR1</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Malzeme numarası</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_EXIST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tek basamaklı gösterge</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZGY_FM_0003</FUNCNAME>
+     <SHORT_TEXT>vkorg control</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>MATNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_VKORG</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>VKORG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_EXIST</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR1</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Malzeme numarası</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_VKORG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Satış organizasyonu</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_EXIST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tek basamaklı gösterge</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZGY_FM_0004</FUNCNAME>
+     <SHORT_TEXT>vkorg vtmeg control</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>MATNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_VKORG</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>VKORG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_VTWEG</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>VTWEG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_EXIST</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>CHAR1</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Malzeme numarası</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_VKORG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Satış organizasyonu</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_VTWEG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Dağıtım kanalı</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_EXIST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tek basamaklı gösterge</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

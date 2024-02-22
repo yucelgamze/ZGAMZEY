@@ -1,11 +1,10 @@
 *&---------------------------------------------------------------------*
-*& Include          ZGY_P_LCL
+*& Include          ZGY_P_0009_LCL
 *&---------------------------------------------------------------------*
 CLASS lcl_class DEFINITION.
   PUBLIC SECTION.
     METHODS:
       get_data,
-      print_smartform,
       call_screen,
       pbo_0100,
       pai_0100 IMPORTING iv_ucomm TYPE sy-ucomm,
@@ -16,92 +15,42 @@ ENDCLASS.
 CLASS lcl_class IMPLEMENTATION.
   METHOD get_data.
 
-    SELECT
-    vbeln,
-    erdat,
-    ernam,
-    audat,
-    auart,
-    vkorg,
-    vtweg
-    FROM vbak
-    WHERE vbeln IN @so_vbeln
+    DATA:lt_agr_users TYPE TABLE OF agr_users.
+
+    IF so_bname IS INITIAL.
+
+      so_bname = VALUE #( sign   = 'I'
+                          option = 'EQ'
+                          low    = sy-uname  ).
+
+      APPEND so_bname TO so_bname[].
+    ENDIF.
+
+    SELECT bname
+    FROM usr02
+    WHERE bname IN @so_bname
     INTO CORRESPONDING FIELDS OF TABLE @gt_alv.
 
-  ENDMETHOD.
-  METHOD print_smartform.
+    SORT gt_alv BY bname.
 
-    DATA:lt_index_rows TYPE lvc_t_row.
+    LOOP AT gt_alv ASSIGNING FIELD-SYMBOL(<lfs_alv>).
 
-    CALL METHOD go_alv_grid->get_selected_rows
-      IMPORTING
-        et_index_rows = lt_index_rows.   " Indexes of Selected Rows
+      CLEAR:lt_agr_users.
+      CALL FUNCTION 'CKEXUTIL_USER_TO_ROLE'
+        EXPORTING
+          i_uname      = <lfs_alv>-bname
+        TABLES
+          et_agr_users = lt_agr_users.
 
-    IF lt_index_rows IS INITIAL.
-      MESSAGE i001 DISPLAY LIKE 'E'.
-    ELSE.
-      LOOP AT lt_index_rows INTO DATA(ls_index_row).
-        READ TABLE gt_alv ASSIGNING FIELD-SYMBOL(<lfs_alv>) INDEX ls_index_row-index.
-        IF sy-subrc IS INITIAL.
-          DATA(lv_vbeln) = <lfs_alv>-vbeln.
-        ENDIF.
+      LOOP AT lt_agr_users ASSIGNING FIELD-SYMBOL(<lfs_agr_user>) WHERE from_dat GE p_start
+                                                                  AND   to_dat   LE p_fin.
+        <lfs_alv> = VALUE #( BASE gs_alv
+                             bname    = <lfs_agr_user>-uname
+                             agr_name = <lfs_agr_user>-agr_name
+                             from_dat = <lfs_agr_user>-from_dat
+                             to_dat   = <lfs_agr_user>-to_dat ).
       ENDLOOP.
-    ENDIF.
-
-    SELECT SINGLE
-    vbeln,
-    erdat,
-    ernam,
-    audat,
-    auart,
-    vkorg,
-    vtweg
-    FROM vbak
-    WHERE vbeln EQ @lv_vbeln
-    INTO @gs_header.
-
-    IF gs_header IS NOT INITIAL.
-      SELECT
-      vbeln,
-      posnr,
-      matnr,
-      charg,
-      netwr,
-      waerk,
-      werks
-      FROM vbap                                       "internal table olsaydı -> for all entries in
-      WHERE vbap~vbeln EQ @gs_header-vbeln
-      INTO CORRESPONDING FIELDS OF TABLE @gt_items.
-    ENDIF.
-
-    gs_controls-no_dialog = abap_true.
-    gs_controls-preview   = abap_true.
-    gs_output_op-tddest   = 'LP01'.
-
-    CALL FUNCTION 'SSF_FUNCTION_MODULE_NAME'
-      EXPORTING
-        formname           = 'ZGY_SF_0003'
-      IMPORTING
-        fm_name            = gv_fm_name
-      EXCEPTIONS
-        no_form            = 1
-        no_function_module = 2
-        OTHERS             = 3.
-
-*    /1BCDWB/SF00000307'
-    CALL FUNCTION gv_fm_name
-      EXPORTING
-        control_parameters = gs_controls
-        output_options     = gs_output_op
-        user_settings      = ' '
-        it_items           = gt_items
-        is_header          = gs_header
-      EXCEPTIONS
-        formatting_error   = 1
-        internal_error     = 2
-        send_error         = 3
-        user_canceled      = 4
-        OTHERS             = 5.
+    ENDLOOP.
   ENDMETHOD.
   METHOD call_screen.
     CALL SCREEN 0100.
@@ -114,39 +63,76 @@ CLASS lcl_class IMPLEMENTATION.
     CASE iv_ucomm.
       WHEN '&BACK'.
         SET SCREEN 0.
-      WHEN '&SF'.
-        go_local->print_smartform( ).
     ENDCASE.
   ENDMETHOD.
   METHOD set_fcat.
-    CALL FUNCTION 'LVC_FIELDCATALOG_MERGE'
-      EXPORTING
-        i_structure_name = 'ZGY_S_0027'
-      CHANGING
-        ct_fieldcat      = gt_fcat.
+
+    CLEAR:gs_fcat.
+    gs_fcat = VALUE #( col_pos   = 1
+                       datatype  = 'CHAR'
+                       intlen    = 12
+                       fieldname = 'BNAME'
+                       scrtext_l = 'Kullanıcı Adı'
+                       scrtext_m = 'Kullanıcı Adı'
+                       scrtext_s = 'Kullanıcı Adı').
+    APPEND gs_fcat TO gt_fcat.
+
+    CLEAR:gs_fcat.
+    gs_fcat = VALUE #( col_pos   = 2
+                       datatype  = 'CHAR'
+                       intlen    = 30
+                       fieldname = 'AGR_NAME'
+                       scrtext_l = 'Rol'
+                       scrtext_m = 'Rol'
+                       scrtext_s = 'Rol').
+    APPEND gs_fcat TO gt_fcat.
+
+    CLEAR:gs_fcat.
+    gs_fcat = VALUE #( col_pos   = 3
+                       ref_table = 'AGR_USERS'
+                       ref_field = 'FROM_DAT'
+                       fieldname = 'FROM_DAT'
+                       scrtext_l = 'Başlangıç Tarihi'
+                       scrtext_m = 'Başlangıç Tarihi'
+                       scrtext_s = 'Başlangıç T.').
+    APPEND gs_fcat TO gt_fcat.
+
+    CLEAR:gs_fcat.
+    gs_fcat = VALUE #( col_pos   = 4
+                       ref_table = 'AGR_USERS'
+                       ref_field = 'TO_DAT'
+                       fieldname = 'TO_DAT'
+                       scrtext_l = 'Bitiş Tarihi'
+                       scrtext_m = 'Bitiş Tarihi'
+                       scrtext_s = 'Bitiş T.').
+    APPEND gs_fcat TO gt_fcat.
+*    CALL FUNCTION 'LVC_FIELDCATALOG_MERGE'
+*      EXPORTING
+*        i_structure_name = 'MARA'
+*      CHANGING
+*        ct_fieldcat      = gt_fcat.
   ENDMETHOD.
   METHOD set_layout.
-    gs_layout-zebra      = abap_true.
-    gs_layout-cwidth_opt = abap_true.
-    gs_layout-col_opt    = abap_true.
-    gs_layout-sel_mode   = 'A'.
+    gs_layout = VALUE #(  cwidth_opt = abap_true
+                          col_opt    = abap_true
+                          zebra      = abap_true  ).
   ENDMETHOD.
   METHOD display_alv.
     IF go_alv_grid IS INITIAL.
       CREATE OBJECT go_container
         EXPORTING
-          container_name = 'CC_ALV'.   " Name of the Screen CustCtrl Name to Link Container To
+          container_name = 'CC_ALV'.  " Name of the Screen CustCtrl Name to Link Container To
       CREATE OBJECT go_alv_grid
         EXPORTING
-          i_parent = go_container.  " Parent Container
+          i_parent = go_container.   " Parent Container
       CALL METHOD go_alv_grid->set_table_for_first_display
         EXPORTING
           is_layout       = gs_layout   " Layout
         CHANGING
           it_outtab       = gt_alv   " Output Table
-          it_fieldcatalog = gt_fcat.   " Field Catalog
+          it_fieldcatalog = gt_fcat.  " Field Catalog
     ELSE.
-      CALL METHOD go_alv_grid->refresh_table_display.
+      CALL METHOD go_alv_grid->refresh_table_display( ).
     ENDIF.
   ENDMETHOD.
 ENDCLASS.

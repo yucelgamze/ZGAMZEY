@@ -31,6 +31,53 @@
      <MSGNR>003</MSGNR>
      <TEXT>Tüm alanlar dolu olmak zorunda!</TEXT>
     </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZGY_MC_0001</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Malzeme bulunamadı!”</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZGY_MC_0001</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Malzeme &amp; satış organizasyonunda bulunmuyor!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZGY_MC_0001</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Malzeme &amp; satış organiasyonu ve &amp; dağıtım kanalında bulunmuyor!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZGY_MC_0001</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Hatalı satırlarla işlem yapılamaz!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZGY_MC_0001</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Satış Belgesi oluşan satırlar için işlem yapılamaz!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZGY_MC_0001</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Miktar girmelisiniz!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZGY_MC_0001</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Kayıt işlemi için satır seçimi yapın!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZGY_MC_0001</ARBGB>
+     <MSGNR>012</MSGNR>
+    </T100>
    </T100>
   </asx:values>
  </asx:abap>

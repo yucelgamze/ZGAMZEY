@@ -121,37 +121,42 @@ CLASS lcl_class IMPLEMENTATION.
                                deliv_date = sy-datum
                                rel_date   = sy-datum ).
       ENDIF.
-    ENDLOOP.
 
-    CALL FUNCTION 'BAPI_REQUISITION_CREATE'
-      EXPORTING
-        automatic_source  = 'X'
-      TABLES
-        requisition_items = lt_items
-        return            = lt_return.
 
-    IF ls_return-type EQ 'S'.
-
-      DATA:lt_itemsget TYPE TABLE OF bapieban,
-           ls_itemsget LIKE LINE OF  lt_itemsget.
-
-      lt_itemsget = CORRESPONDING #( lt_items ).
-
-      CALL FUNCTION 'BAPI_REQUISITION_GETDETAIL'
-*        EXPORTING
-*          number            =
+      CALL FUNCTION 'BAPI_REQUISITION_CREATE'
+        EXPORTING
+          automatic_source  = 'X'
         TABLES
-          requisition_items = lt_itemsget.
+          requisition_items = lt_items
+          return            = lt_return.
+
+      IF ls_return-type EQ 'S'.
+
+        CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
+          EXPORTING
+            wait = 'X'.
+      ELSE.
+        CALL FUNCTION 'BAPI_TRANSACTION_ROLLBACK'.
+      ENDIF.
+*        DATA:lt_itemsget TYPE TABLE OF bapieban,
+*             ls_itemsget LIKE LINE OF  lt_itemsget.
+*
+*        lt_itemsget = CORRESPONDING #( lt_items ).
+
+*        CALL FUNCTION 'BAPI_REQUISITION_GETDETAIL'
+**        EXPORTING
+**          number            =
+*          TABLES
+*            requisition_items = lt_itemsget.
 
       LOOP AT gt_alv ASSIGNING FIELD-SYMBOL(<lfs_alv>).
-        READ TABLE lt_itemsget INTO ls_itemsget WITH KEY material = <lfs_alv>-matnr.
-        <lfs_alv>-satno    = ls_itemsget-preq_no.
-        <lfs_alv>-satkalem = ls_itemsget-preq_item.
+        READ TABLE lt_items INTO ls_items WITH KEY material = <lfs_alv>-matnr.
+        <lfs_alv>-satno    = ls_items-preq_no.
+        <lfs_alv>-satkalem = ls_items-preq_item.
         <lfs_alv>-durum    = '@08@'.
       ENDLOOP.
-    ELSE.
-      <lfs_alv>-durum    = '@0A@'.
-    ENDIF.
+
+    ENDLOOP.
 
   ENDMETHOD.
   METHOD call_screen.

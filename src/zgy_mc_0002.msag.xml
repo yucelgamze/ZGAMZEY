@@ -19,6 +19,18 @@
      <MSGNR>001</MSGNR>
      <TEXT>Error! Total Number of Records Cannot Be Updated!</TEXT>
     </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZGY_MC_0002</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Kayıt bulundu!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZGY_MC_0002</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Hata! Kayıt bulunamadı!</TEXT>
+    </T100>
    </T100>
   </asx:values>
  </asx:abap>

@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <PROGDIR>
-    <NAME>ZGY_P_0011</NAME>
+    <NAME>ZGY_SF_XXX</NAME>
     <SUBC>1</SUBC>
     <RLOAD>T</RLOAD>
     <FIXPT>X</FIXPT>
@@ -13,25 +13,25 @@
     <item>
      <ID>I</ID>
      <KEY>000</KEY>
-     <ENTRY>Para Birimi Selection Screen</ENTRY>
-     <LENGTH>56</LENGTH>
+     <ENTRY>Barcode ve Condition parametresi giriniz</ENTRY>
+     <LENGTH>80</LENGTH>
     </item>
     <item>
      <ID>R</ID>
-     <ENTRY>smarform driver program</ENTRY>
-     <LENGTH>23</LENGTH>
+     <ENTRY>sf driver</ENTRY>
+     <LENGTH>9</LENGTH>
     </item>
     <item>
      <ID>S</ID>
-     <KEY>P_ACTIVE</KEY>
-     <ENTRY>Active / Passive</ENTRY>
-     <LENGTH>24</LENGTH>
+     <KEY>P_BAR</KEY>
+     <ENTRY>Barcode</ENTRY>
+     <LENGTH>15</LENGTH>
     </item>
     <item>
      <ID>S</ID>
-     <KEY>SO_PB</KEY>
-     <ENTRY>Havayolu şirketi Para Br.</ENTRY>
-     <LENGTH>33</LENGTH>
+     <KEY>P_COND</KEY>
+     <ENTRY>Condition</ENTRY>
+     <LENGTH>17</LENGTH>
     </item>
    </TPOOL>
   </asx:values>
