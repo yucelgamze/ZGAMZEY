@@ -170,8 +170,8 @@
       <CODE>&amp;CREATE</CODE>
       <TEXTNO>001</TEXTNO>
       <TEXT_TYPE>S</TEXT_TYPE>
-      <TEXT_NAME>ICON_CREATE</TEXT_NAME>
-      <ICON_ID>@0Y@</ICON_ID>
+      <TEXT_NAME>ICON_NEW_TASK</TEXT_NAME>
+      <ICON_ID>@LJ@</ICON_ID>
       <FUN_TEXT>Create Sales Order</FUN_TEXT>
       <ICON_TEXT>Create Sales Order</ICON_TEXT>
       <INFO_TEXT>Create Sales Order</INFO_TEXT>
@@ -185,6 +185,16 @@
       <FUN_TEXT>Ok</FUN_TEXT>
       <ICON_TEXT>Ok</ICON_TEXT>
       <INFO_TEXT>Ok</INFO_TEXT>
+     </RSMPE_FUNT>
+     <RSMPE_FUNT>
+      <CODE>&amp;ROW</CODE>
+      <TEXTNO>001</TEXTNO>
+      <TEXT_TYPE>S</TEXT_TYPE>
+      <TEXT_NAME>ICON_CREATE</TEXT_NAME>
+      <ICON_ID>@0Y@</ICON_ID>
+      <FUN_TEXT>Satır Ekle</FUN_TEXT>
+      <ICON_TEXT>Satır Ekle</ICON_TEXT>
+      <INFO_TEXT>Satır Ekle</INFO_TEXT>
      </RSMPE_FUNT>
      <RSMPE_FUNT>
       <CODE>&amp;SAVE</CODE>
@@ -209,6 +219,12 @@
       <PFNO>05</PFNO>
      </RSMPE_BUT>
      <RSMPE_BUT>
+      <PFK_CODE>000001</PFK_CODE>
+      <CODE>0001</CODE>
+      <NO>02</NO>
+      <PFNO>02</PFNO>
+     </RSMPE_BUT>
+     <RSMPE_BUT>
       <PFK_CODE>000002</PFK_CODE>
       <CODE>0001</CODE>
       <NO>01</NO>
@@ -222,6 +238,12 @@
      </RSMPE_BUT>
     </BUT>
     <PFK>
+     <RSMPE_PFK>
+      <CODE>000001</CODE>
+      <PFNO>02</PFNO>
+      <FUNCODE>&amp;ROW</FUNCODE>
+      <FUNNO>001</FUNNO>
+     </RSMPE_PFK>
      <RSMPE_PFK>
       <CODE>000001</CODE>
       <PFNO>03</PFNO>
@@ -261,6 +283,10 @@
      <RSMPE_STAF>
       <STATUS>0100</STATUS>
       <FUNCTION>&amp;CREATE</FUNCTION>
+     </RSMPE_STAF>
+     <RSMPE_STAF>
+      <STATUS>0100</STATUS>
+      <FUNCTION>&amp;ROW</FUNCTION>
      </RSMPE_STAF>
      <RSMPE_STAF>
       <STATUS>0100</STATUS>

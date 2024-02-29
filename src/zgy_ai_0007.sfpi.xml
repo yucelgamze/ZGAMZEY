@@ -77,6 +77,16 @@
        <STANDARD/>
        <CONSTANT/>
       </SFPIOPAR>
+      <SFPIOPAR>
+       <NAME>IV_BARCODE</NAME>
+       <TYPING>TYPE</TYPING>
+       <TYPENAME>CHAR200</TYPENAME>
+       <OPTIONAL>X</OPTIONAL>
+       <BYVALUE>X</BYVALUE>
+       <DEFAULTVAL/>
+       <STANDARD/>
+       <CONSTANT/>
+      </SFPIOPAR>
      </IMPORT_PARAMETERS>
      <EXPORT_PARAMETERS/>
      <TABLE_PARAMETERS/>

@@ -2,7 +2,7 @@
 <abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
-   <AREAT>GY Function Group</AREAT>
+   <AREAT>FBLN için ek alan FG</AREAT>
    <INCLUDES>
     <SOBJ_NAME>LZGY_FG_0002TOP</SOBJ_NAME>
     <SOBJ_NAME>SAPLZGY_FG_0002</SOBJ_NAME>

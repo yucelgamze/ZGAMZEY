@@ -191,8 +191,8 @@
     <item>
      <ID>I</ID>
      <KEY>000</KEY>
-     <ENTRY>Satış Belgesi</ENTRY>
-     <LENGTH>23</LENGTH>
+     <ENTRY>Satış Belgesi ve QR/Barcode giriniz</ENTRY>
+     <LENGTH>132</LENGTH>
     </item>
     <item>
      <ID>R</ID>
@@ -201,9 +201,15 @@
     </item>
     <item>
      <ID>S</ID>
+     <KEY>P_CODE</KEY>
+     <ENTRY>Barcode/QR Code</ENTRY>
+     <LENGTH>23</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
      <KEY>SO_VBELN</KEY>
      <ENTRY>.</ENTRY>
-     <LENGTH>9</LENGTH>
+     <LENGTH>21</LENGTH>
      <SPLIT>D</SPLIT>
     </item>
    </TPOOL>

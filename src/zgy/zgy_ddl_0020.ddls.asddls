@@ -3,6 +3,9 @@
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Casting of Data Elements'
+
+
+
 define view zgy_ddl_0020
   as select from mara
 {

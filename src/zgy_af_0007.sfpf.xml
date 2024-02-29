@@ -67,7 +67,7 @@
      <NAME>IS_HEADER</NAME>
      <GENERATED/>
      <STATE>A</STATE>
-     <CONDITION href="#o49"/>
+     <CONDITION href="#o51"/>
      <PARENT href="#o2"/>
      <SUCCESSOR href="#o18"/>
      <CHILD href="#o4"/>
@@ -236,7 +236,7 @@
      <NAME>IT_ITEMS</NAME>
      <GENERATED/>
      <STATE>A</STATE>
-     <CONDITION href="#o48"/>
+     <CONDITION href="#o50"/>
      <PARENT href="#o2"/>
      <SUCCESSOR href="#o36"/>
      <CHILD href="#o20"/>
@@ -437,7 +437,7 @@
      <NAME>SFPSY</NAME>
      <GENERATED/>
      <STATE>A</STATE>
-     <CONDITION href="#o47"/>
+     <CONDITION href="#o49"/>
      <PARENT href="#o2"/>
      <SUCCESSOR href="#o45"/>
      <CHILD href="#o37"/>
@@ -540,9 +540,9 @@
      <NAME>GRAPHIC</NAME>
      <GENERATED/>
      <STATE>A</STATE>
-     <CONDITION href="#o46"/>
+     <CONDITION href="#o48"/>
      <PARENT href="#o2"/>
-     <SUCCESSOR/>
+     <SUCCESSOR href="#o46"/>
      <CHILD/>
     </CL_FP_NODE>
     <CL_FP_GRAPHIC classVersion="1"/>
@@ -554,25 +554,47 @@
      </GRAPHIC_MIME>
     </CL_FP_GRAPHIC_CONTENT>
    </cls:CL_FP_GRAPHIC_CONTENT>
-   <cls:CL_FP_CONDITION id="o46">
-    <CL_FP_CONDITION classVersion="1">
-     <NODE href="#o45"/>
-     <CONDITIONS/>
-    </CL_FP_CONDITION>
-   </cls:CL_FP_CONDITION>
+   <cls:CL_FP_DATA id="o46">
+    <CL_FP_NODE classVersion="1">
+     <ID>E827ECF3B45B1EDEB4C6407F3F4F0100</ID>
+     <NAME>IV_BARCODE</NAME>
+     <GENERATED/>
+     <STATE>A</STATE>
+     <CONDITION href="#o47"/>
+     <PARENT href="#o2"/>
+     <SUCCESSOR/>
+     <CHILD/>
+    </CL_FP_NODE>
+    <CL_FP_DATA classVersion="1">
+     <FIELD>IV_BARCODE</FIELD>
+     <FIELD_LABEL/>
+    </CL_FP_DATA>
+   </cls:CL_FP_DATA>
    <cls:CL_FP_CONDITION id="o47">
     <CL_FP_CONDITION classVersion="1">
-     <NODE href="#o36"/>
+     <NODE href="#o46"/>
      <CONDITIONS/>
     </CL_FP_CONDITION>
    </cls:CL_FP_CONDITION>
    <cls:CL_FP_CONDITION id="o48">
     <CL_FP_CONDITION classVersion="1">
-     <NODE href="#o18"/>
+     <NODE href="#o45"/>
      <CONDITIONS/>
     </CL_FP_CONDITION>
    </cls:CL_FP_CONDITION>
    <cls:CL_FP_CONDITION id="o49">
+    <CL_FP_CONDITION classVersion="1">
+     <NODE href="#o36"/>
+     <CONDITIONS/>
+    </CL_FP_CONDITION>
+   </cls:CL_FP_CONDITION>
+   <cls:CL_FP_CONDITION id="o50">
+    <CL_FP_CONDITION classVersion="1">
+     <NODE href="#o18"/>
+     <CONDITIONS/>
+    </CL_FP_CONDITION>
+   </cls:CL_FP_CONDITION>
+   <cls:CL_FP_CONDITION id="o51">
     <CL_FP_CONDITION classVersion="1">
      <NODE href="#o3"/>
      <CONDITIONS/>

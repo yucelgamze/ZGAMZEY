@@ -26,6 +26,7 @@ CLASS lcl_class DEFINITION.
             e_ucomm,
       create,
       disable_edit,
+      add_row,
       call_screen,
       pbo_0100,
       pai_0100 IMPORTING iv_ucomm TYPE sy-ucomm,
@@ -393,6 +394,13 @@ CLASS lcl_class IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
+  METHOD add_row.
+    DATA:ls_data TYPE gty_alv.
+
+    CLEAR:ls_data.
+    APPEND ls_data TO gt_alv.
+  ENDMETHOD.
+
   METHOD call_screen.
     CALL SCREEN 0100.
   ENDMETHOD.
@@ -408,6 +416,8 @@ CLASS lcl_class IMPLEMENTATION.
         SET SCREEN 0.
       WHEN '&CREATE'.
         go_local->create( ).
+      WHEN '&ROW'.
+        go_local->add_row( ).
     ENDCASE.
   ENDMETHOD.
 

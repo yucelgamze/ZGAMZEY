@@ -2,7 +2,7 @@
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Date definition language'
+@EndUserText.label: 'Data definition language'
 define view zgy_V_0001
   as select from mara
 {

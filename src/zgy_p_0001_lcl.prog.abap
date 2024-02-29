@@ -146,11 +146,13 @@ CLASS lcl_local IMPLEMENTATION.
       IMPORTING
         e_funcname = fm_name.
 
-    CALL FUNCTION '/1BCDWB/SM00000598'
+*    CALL FUNCTION '/1BCDWB/SM00000598'
+    CALL FUNCTION fm_name
       EXPORTING
         /1bcdwb/docparams = fp_docparams
         is_header         = gs_header
         it_items          = gt_items
+        iv_barcode        = p_code
 * IMPORTING
 *       /1BCDWB/FORMOUTPUT       =
       EXCEPTIONS

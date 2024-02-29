@@ -76,6 +76,12 @@
     <T100>
      <SPRSL>T</SPRSL>
      <ARBGB>ZGY_MC_0001</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Lütfen PRINT ETIKET işlemi için bir satır seçin!!!</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZGY_MC_0001</ARBGB>
      <MSGNR>012</MSGNR>
     </T100>
    </T100>
