@@ -9,6 +9,55 @@
    </INCLUDES>
    <FUNCTIONS>
     <item>
+     <FUNCNAME>ZGY_FM_0005</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>webservice testing</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_TITLE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR30</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_FIRTNAME</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR30</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_LASTNAME</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR30</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_NAME</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_TITLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>30 karakter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_FIRTNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>30 karakter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_LASTNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>30 karakter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_NAME</PARAMETER>
+       <KIND>P</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
      <FUNCNAME>ZGY_FM_WEB</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
      <SHORT_TEXT>satış sipariş web servis entegrasyonu</SHORT_TEXT>

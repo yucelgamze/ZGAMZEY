@@ -79,39 +79,88 @@ DATA:flag TYPE abap_bool.
 *cl_demo_output=>display( ).
 
 *--------------------------------------------------------------------*
+*
+*DATA: lv_destination TYPE rfcdest,
+*      lt_data        TYPE TABLE OF tab512,
+*      lt_fields      TYPE TABLE OF rfc_db_fld.
+*
+*lv_destination = 'LDAP_RFC'.
+*"sm59
+*"RFC Destination: LDAP_RFC
+*"Connection Type: T (TCP/IP Connection)
+*"Target Host: ldap.example.com
+*"Target Service: 389
+*
+*CALL FUNCTION 'RFC_READ_TABLE'
+*  DESTINATION lv_destination
+*  EXPORTING
+*    query_table    = 'YOUR_TABLE'
+*  TABLES
+*    data           = lt_data
+*    fields         = lt_fields
+*  EXCEPTIONS
+*    system_failure = 1
+*    OTHERS         = 2.
+*
+*IF sy-subrc = 0.
+*  WRITE: 'Data read successfully.'.
+*  LOOP AT lt_data INTO DATA(ls_data).
+*    " Process the retrieved data as needed
+*    WRITE: / ls_data.
+*  ENDLOOP.
+*ELSE.
+**  READ TABLE lt_data INDEX 1 TRANSPORTING NO FIELDS.
+**  IF sy-subrc = 0.
+**    MOVE-CORRESPONDING lt_data TO lv_error.
+**  ENDIF.
+*  WRITE: 'Error reading data:'.", lv_error-message.
+*ENDIF.
 
-DATA: lv_destination TYPE rfcdest,
-      lt_data        TYPE TABLE OF tab512,
-      lt_fields      TYPE TABLE OF rfc_db_fld.
 
-lv_destination = 'LDAP_RFC'.
-"sm59
-"RFC Destination: LDAP_RFC
-"Connection Type: T (TCP/IP Connection)
-"Target Host: ldap.example.com
-"Target Service: 389
-
-CALL FUNCTION 'RFC_READ_TABLE'
-  DESTINATION lv_destination
-  EXPORTING
-    query_table    = 'YOUR_TABLE'
-  TABLES
-    data           = lt_data
-    fields         = lt_fields
-  EXCEPTIONS
-    system_failure = 1
-    OTHERS         = 2.
-
-IF sy-subrc = 0.
-  WRITE: 'Data read successfully.'.
-  LOOP AT lt_data INTO DATA(ls_data).
-    " Process the retrieved data as needed
-    WRITE: / ls_data.
-  ENDLOOP.
-ELSE.
-*  READ TABLE lt_data INDEX 1 TRANSPORTING NO FIELDS.
-*  IF sy-subrc = 0.
-*    MOVE-CORRESPONDING lt_data TO lv_error.
-*  ENDIF.
-  WRITE: 'Error reading data:'.", lv_error-message.
-ENDIF.
+*CALL FUNCTION 'BAPI_BUPA_CREATE_FROM_DATA'
+*  EXPORTING
+**   BUSINESSPARTNEREXTERN              =
+*    partnercategory                    =
+**   PARTNERGROUP                       =
+*    centraldata                        =
+**   CENTRALDATAPERSON                  =
+**   CENTRALDATAORGANIZATION            =
+**   CENTRALDATAGROUP                   =
+**   ADDRESSDATA                        =
+**   DUPLICATE_MESSAGE_TYPE             =
+**   ACCEPT_ERROR                       = ' '
+** IMPORTING
+**   BUSINESSPARTNER                    =
+** TABLES
+**   TELEFONDATA                        =
+**   FAXDATA                            =
+**   TELETEXDATA                        =
+**   TELEXDATA                          =
+**   E_MAILDATA                         =
+**   RMLADDRESSDATA                     =
+**   X400ADDRESSDATA                    =
+**   RFCADDRESSDATA                     =
+**   PRTADDRESSDATA                     =
+**   SSFADDRESSDATA                     =
+**   URIADDRESSDATA                     =
+**   PAGADDRESSDATA                     =
+**   ADDRESSNOTES                       =
+**   COMMUNICATIONNOTES                 =
+**   COMMUNICATIONUSAGE                 =
+**   TELEFONDATANONADDRESS              =
+**   FAXDATANONADDRESS                  =
+**   TELETEXDATANONADDRESS              =
+**   TELEXDATANONADDRESS                =
+**   E_MAILDATANONADDRESS               =
+**   RMLADDRESSDATANONADDRESS           =
+**   X400ADDRESSDATANONADDRESS          =
+**   RFCADDRESSDATANONADDRESS           =
+**   PRTADDRESSDATANONADDRESS           =
+**   SSFADDRESSDATANONADDRESS           =
+**   URIADDRESSDATANONADDRESS           =
+**   PAGADDRESSDATANONADDRESS           =
+**   COMMUNICATIONNOTESNONADDRESS       =
+**   COMMUNICATIONUSAGENONADDRESS       =
+**   RETURN                             =
+**   ADDRESSDUPLICATES                  =
+*          .

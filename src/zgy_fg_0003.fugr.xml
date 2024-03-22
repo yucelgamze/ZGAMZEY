@@ -9,6 +9,143 @@
    </INCLUDES>
    <FUNCTIONS>
     <item>
+     <FUNCNAME>ZBAPI_CTRACCONTRACTACCOUNT_CR1</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>BAPI: FI-CA Create Contract Account</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>CTRACCREATEINFO</PARAMETER>
+       <DBFIELD>BAPIFKKVKCI</DBFIELD>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>CTRACDETAIL</PARAMETER>
+       <DBFIELD>BAPIFKKVKI</DBFIELD>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>TESTRUN</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BAPICTRACAUX-TESTRUN</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>VALIDFROM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>BAPICTRACAUX-VALID_FROM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>ZTERM</PARAMETER>
+       <TYP>DZTERM</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>CONTRACTACCOUNT</PARAMETER>
+       <DBFIELD>BAPIFKKVK-CONT_ACCT</DBFIELD>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>CTRACPARTNERDETAIL</PARAMETER>
+       <DBSTRUCT>BAPIFKKVKPI1</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>CTRACCHARGESDISCOUNTS</PARAMETER>
+       <DBSTRUCT>BAPIFKKVKP_CHGDISCI</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>CTRACLOCKDETAIL</PARAMETER>
+       <DBSTRUCT>BAPIFKKVKLOCKSI1</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>EXTENSIONIN</PARAMETER>
+       <DBSTRUCT>BAPIPAREX</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>CTRACCORRRECEIVER</PARAMETER>
+       <DBSTRUCT>BAPIFKKVKCORRI</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>CTRACTAXEXEMPTION</PARAMETER>
+       <DBSTRUCT>BAPIFKKVKTAXI</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>CTRACCREATEINFO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Basic Data for Contract Account</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CTRACDETAIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Partner-Independent Data</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>TESTRUN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Switch to Simulation Mode for Write BAPIs</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>VALIDFROM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Validity date of changes</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ZTERM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Ödeme koşulları anahtarı</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CONTRACTACCOUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Contract Account Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CTRACPARTNERDETAIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Partner-Specific Data</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CTRACCHARGESDISCOUNTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Individual Charges/Discounts</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CTRACLOCKDETAIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Lock on Contract Account</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Confirmations</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EXTENSIONIN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Customer Enhancements</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CTRACCORRRECEIVER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Alternative Correspondence Recipients</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CTRACTAXEXEMPTION</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Tax Exemption</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
      <FUNCNAME>ZGY_FM_0002</FUNCNAME>
      <SHORT_TEXT>Malzeme Kontrolü FM</SHORT_TEXT>
      <IMPORT>
